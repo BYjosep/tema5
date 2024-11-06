@@ -20,8 +20,8 @@ public class Ejercicio2 {
         int vocales, consonantes;
         vocales = 0;
         consonantes = 0;
+        frase = frase.toLowerCase();
         longitud = frase.length();
-
 
         //char[] test = frase.toCharArray();
         for (int i = 0; i < longitud; i++) {
