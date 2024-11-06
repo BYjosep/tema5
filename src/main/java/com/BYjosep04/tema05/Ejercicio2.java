@@ -27,7 +27,7 @@ public class Ejercicio2 {
         for (int i = 0; i < longitud; i++) {
 
             switch (frase.charAt(i)) {
-                case 'a', 'e', 'i', 'o', 'u' -> vocales = +1;
+                case 'a', 'e', 'i', 'o', 'u' -> vocales += 1;
                 case 'q', 'w', 'r', 't', 'y', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l',
                      'z', 'x', 'c', 'v', 'b', 'n', 'm' -> consonantes += 1;
             }
