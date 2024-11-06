@@ -1,7 +1,5 @@
 package com.BYjosep04.tema05;
 
-// Escribe un metodo que dada una frase devuelva la misma
-// pero con la primera letra en mayscula
 
 import java.util.Scanner;
 
@@ -11,6 +9,7 @@ public class Ejercicio1 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese la frase");
         frase = scanner.nextLine();
+        scanner.close();
         fraseModificada= primeraLetraMayuscula(frase);
         System.out.println(fraseModificada);
     }
