@@ -21,9 +21,9 @@ public class Ejercicio2 {
         longitud= frase.length();
 
 
-        //char valorPosicion = String.valueOf(frase.charAt(i));
+        char valorPosicion = String.valueOf(frase.charAt(i));
         for (int i = 0; i < longitud-1; i++) {
-            switch (Character.valueOf(String.valueOf(frase.charAt(i)))){
+            switch (){
                 case 'a'-> System.out.println("hola");
             }
 
