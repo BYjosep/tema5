@@ -25,10 +25,10 @@ public class Ejercicio4 {
     public static StringBuilder contadorVocalesConsonantesPorPalabras(String mensaje) {
         StringBuilder mensajeEntregado = new StringBuilder();
         String[] array;
-        array = mensaje.split("\\s|\n|,");
+        array = mensaje.split("\\s|\n");
 
 
-        for (int i = 0; i < mensaje.split("\\s|\n|,").length; i++) {
+        for (int i = 0; i < mensaje.split("\\s|\n").length; i++) {
             mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
 
         }
