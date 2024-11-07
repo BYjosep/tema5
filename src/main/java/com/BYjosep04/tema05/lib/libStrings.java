@@ -45,10 +45,10 @@ public class libStrings {
                      'y', 'p', 's', 'd',
                      'f', 'g', 'h', 'j',
                      'k', 'l', 'z', 'x',
-                     'c', 'v', 'b', 'n', 'm' -> consonantes += 1;
+                     'c', 'v', 'b', 'n', 'm','ñ','ç' -> consonantes += 1;
             }
         }
-        resultado = "El resultado ha sido de " + vocales + " vocales y " + consonantes + " consonates";
+        resultado =  vocales + " vocales y " + consonantes + " consonates";
         return resultado;
 
     }
@@ -74,5 +74,47 @@ public class libStrings {
 
 
         return  mensaje.split("\\s|\n|,").length;
+    }
+
+
+    /**
+     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
+     * de cada palabra
+     * @param mensaje Inserte el mensaje en formato {@link StringBuilder String}
+     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
+     */
+    public static StringBuilder contadorVocalesConsonantesPorPalabras(StringBuilder mensaje){
+        StringBuilder mensajeEntregado = new StringBuilder();
+        String mensajeStr = mensaje.toString();
+        String[] array = mensajeStr.split("\\s|\n|,");
+
+        for (int i = 0; i < mensajeStr.split("\\s|\n|,").length; i++) {
+            mensajeEntregado.append("La palabra ").append(i+1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+
+        }
+
+        return mensajeEntregado;
+    }
+
+
+    /**
+     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
+     * de cada palabra
+     * @param mensaje Inserte el mensaje en formato {@link String String}
+     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
+     */
+    public static StringBuilder contadorVocalesConsonantesPorPalabras(String mensaje){
+        StringBuilder mensajeEntregado = new StringBuilder();
+        String[] array;
+        array = mensaje.split("\\s|\n|,");
+
+
+        for (int i = 0; i < mensaje.split("\\s|\n|,").length; i++) {
+            mensajeEntregado.append("La palabra ").append(i+1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+
+        }
+
+
+        return mensajeEntregado;
     }
 }

@@ -9,31 +9,19 @@ public class Ejercicio3 {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingresre una frase:");
         sb.append(scanner.nextLine());
-
-        System.out.printf("La frase tiene %d palabras",contadorPalabras(sb));
+        scanner.close();
+        System.out.printf("La frase tiene %d palabras", contadorPalabras(sb));
     }
 
     /**
-     *
      * @param mensaje Variable como {@link StringBuilder StringBuilder}
      * @return Devuelve un entero como valor
      */
-    public static int contadorPalabras(StringBuilder mensaje){
+    public static int contadorPalabras(StringBuilder mensaje) {
         String mensajeStr = mensaje.toString();
 
 
-        return  mensajeStr.split("\\s|\n|,").length;
-    }
-
-    /**
-     *
-     * @param mensaje Variable como {@link String String}
-     * @return Devuelve un entero como valor
-     */
-    public static int contadorPalabras(String mensaje){
-
-
-        return  mensaje.split("\\s|\n|,").length;
+        return mensajeStr.split("\\s|\n|,").length;
     }
 
 }

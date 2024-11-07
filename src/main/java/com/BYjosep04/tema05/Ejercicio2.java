@@ -39,7 +39,7 @@ public class Ejercicio2 {
                      'y', 'p', 's', 'd',
                      'f', 'g', 'h', 'j',
                      'k', 'l', 'z', 'x',
-                     'c', 'v', 'b', 'n', 'm' -> consonantes += 1;
+                     'c', 'v', 'b', 'n', 'm','ñ','ç' -> consonantes += 1;
             }
         }
         resultado = "El resultado ha sido de " + vocales + " vocales y " + consonantes + " consonates";
