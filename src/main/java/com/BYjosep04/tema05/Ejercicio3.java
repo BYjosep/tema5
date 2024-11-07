@@ -21,7 +21,7 @@ public class Ejercicio3 {
         String mensajeStr = mensaje.toString();
 
 
-        return mensajeStr.split("\\s|\n|,").length;
+        return mensajeStr.split("\\s|\n").length;
     }
 
 }
