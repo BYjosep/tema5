@@ -29,7 +29,8 @@ public class Ejercicio4 {
 
 
         for (int i = 0; i < mensaje.split("\\s|\n").length; i++) {
-            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ")
+                    .append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
 
         }
 
