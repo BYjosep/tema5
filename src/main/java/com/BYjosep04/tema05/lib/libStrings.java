@@ -60,7 +60,7 @@ public class libStrings {
      */
     public static int contadorPalabras(StringBuilder mensaje){
         String mensajeStr = mensaje.toString();
-
+        mensajeStr = mensajeStr.trim();
 
         return  mensajeStr.split("\\s|\n").length;
     }
@@ -71,7 +71,7 @@ public class libStrings {
      * @return Devuelve un entero como valor
      */
     public static int contadorPalabras(String mensaje){
-
+        mensaje = mensaje.trim();
 
         return  mensaje.split("\\s|\n").length;
     }
