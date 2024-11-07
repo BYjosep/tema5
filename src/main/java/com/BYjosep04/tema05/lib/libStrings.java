@@ -117,4 +117,49 @@ public class libStrings {
 
         return mensajeEntregado;
     }
+
+
+    /**
+     *
+     * @param mensaje Ingrese el mensaje que desee en formato {@link StringBuilder StringBuilder}
+     * @return devuelve un string con un mensaje que indica la palabra mas grande y cuantas letras tiene
+     */
+    public static String palabraMasGRande(StringBuilder mensaje){
+        String mensajeEntregado;
+        String mensajeStr = mensaje.toString();
+        String[] array = mensajeStr.split("\\s|\n|,");
+        String palabra="";
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length()> palabra.length()){
+                palabra = array[i];
+            }
+
+        }
+        mensajeEntregado = "La palabra "+ palabra+ " tiene "+ palabra.length()+ " letras.";
+
+        return mensajeEntregado;
+    }
+
+
+    /**
+     *
+     * @param mensaje Ingrese el mensaje que desee en formato {@link String String}
+     * @return devuelve un string con un mensaje que indica la palabra mas grande y cuantas letras tiene
+     */
+    public static String palabraMasGRande(String mensaje){
+        String mensajeEntregado;
+        String[] array = mensaje.split("\\s|\n|,");
+        String palabra="";
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length()> palabra.length()){
+                palabra = array[i];
+            }
+
+        }
+        mensajeEntregado = "La palabra "+ palabra+ " tiene "+ palabra.length()+ " letras.";
+
+        return mensajeEntregado;
+    }
 }
