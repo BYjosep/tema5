@@ -162,4 +162,35 @@ public class libStrings {
 
         return mensajeEntregado;
     }
+
+    /**
+     *
+     * @param frase Ingresa una frase en formato {@link String String}
+     * @param veces Ingresa el numero de veces en formato {@link Integer int}
+     * @return Devuelve un texto en formato {@link StringBuilder StringBuilder}
+     */
+    public static  StringBuilder repetirFrase(String frase, int veces){
+        StringBuilder mensaje = new StringBuilder();
+
+        for (int i = 0; i < veces; i++) {
+            mensaje.append(frase).append("\n");
+        }
+        return mensaje;
+    }
+
+    /**
+     *
+     * @param frase Ingresa una frase en formato {@link String String}
+     * @param veces Ingresa el numero de veces en formato {@link Integer int}
+     * @return Devuelve un texto en formato {@link StringBuilder StringBuilder}
+     */
+    public static  StringBuilder repetirFrase(StringBuilder frase, int veces){
+        StringBuilder mensaje = new StringBuilder();
+
+        for (int i = 0; i < veces; i++) {
+            mensaje.append(frase).append("\n");
+        }
+        return mensaje;
+    }
+
 }
