@@ -62,7 +62,7 @@ public class libStrings {
         String mensajeStr = mensaje.toString();
 
 
-        return  mensajeStr.split("\\s|\n|,").length;
+        return  mensajeStr.split("\\s|\n").length;
     }
 
     /**
@@ -73,7 +73,7 @@ public class libStrings {
     public static int contadorPalabras(String mensaje){
 
 
-        return  mensaje.split("\\s|\n|,").length;
+        return  mensaje.split("\\s|\n").length;
     }
 
 
