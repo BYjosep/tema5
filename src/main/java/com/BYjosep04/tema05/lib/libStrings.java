@@ -1,7 +1,22 @@
 package com.BYjosep04.tema05.lib;
 
+import java.util.Scanner;
+
 public class libStrings {
 
+    /**
+     * Ingresar frase
+     * @return Devuelve la frase ingresada en formato {@link String String}
+     */
+    public static String ingresarFrase(){
+        String frase;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese una frase");
+        frase = scanner.nextLine();
+        scanner.close();
+        return frase;
+
+    }
 
     /**
      * Transforma el primer caracter en mayusculas
@@ -240,6 +255,19 @@ public class libStrings {
         return sb.toString();
     }
 
-
-
+    /**
+     *
+     * @param frase Ingresa un texto en formato {@link String String}
+     * @return Devuelve el texto en formato {@link String String} solo con
+     * las posiciones impares
+     */
+    public static String fraseEnPosicionImpar(String frase){
+        int largo = frase.length();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i <largo ; i++) {
+            sb.append(frase.charAt(i));
+            i++;
+        }
+        return sb.toString();
+    }
 }
