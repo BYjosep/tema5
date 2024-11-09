@@ -19,6 +19,8 @@ public class libStrings {
 
         return mensajeModificado;
     }
+
+
     /**
      * @param frase El parametro es un String
      * @return devuelve una frase con el numero de vocales y consonantes
@@ -53,6 +55,7 @@ public class libStrings {
 
     }
 
+
     /**
      *
      * @param mensaje Variable como {@link StringBuilder StringBuilder}
@@ -64,6 +67,7 @@ public class libStrings {
 
         return  mensajeStr.split("\\s|\n").length;
     }
+
 
     /**
      *
@@ -192,5 +196,50 @@ public class libStrings {
         }
         return mensaje;
     }
+
+
+    /**
+     *
+     * @param frase Ingrese el texto en formato {@link String String}
+     * @return Devuelve la frase pero cada palabra esta separada por un salto de linea
+     */
+    public static String separadorPalabrasPorLineas(String frase){
+        StringBuilder sb = new StringBuilder();
+        String entrega;
+        String[] array = frase.split("\\s+|\n|,");
+        for (int i = 0; i < array.length; i++) {
+            sb.append(array[i]).append("\n");
+        }
+        entrega= sb.toString();
+        return entrega;
+    }
+
+
+    /**
+     *
+     * @param frase frase en formato {@link  String String}
+     * @return Devuelve un {@link  String String} con una tabla por palabras con el respectivo
+     * numero de letras por palabras
+     */
+    public static String contadorLetrasPorPalabra(String frase){
+        StringBuilder sb = new StringBuilder();
+        String palabra="";
+        frase= frase.trim();
+        String[] array = frase.split("\\s+|\n|,");
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length()> palabra.length()){
+                palabra = array[i];
+            }
+        }
+        int palabraMasLarga = palabra.length();
+        sb= sb.append(String.format("|| %-"+ (palabraMasLarga+3) +"s||%"+(palabraMasLarga+3) +"s ||","palabras","letras")).append("\n");
+        for (int i = 0; i < array.length; i++) {
+            int numero = array[i].length();
+            sb= sb.append(String.format("|| %-"+ (palabraMasLarga+3) +"s||%"+(palabraMasLarga+3) +"d ||",array[i],numero)).append("\n");
+        }
+        return sb.toString();
+    }
+
+
 
 }
