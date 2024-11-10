@@ -1,42 +1,49 @@
 package com.BYjosep04.tema05;
+
 import com.BYjosep04.tema05.lib.libStrings;
 
 public class Ejercicio10 {
     public static void main(String[] args) {
-        String frase =libStrings.ingresarFrase();
+        String frase = libStrings.ingresarFrase();
         System.out.println(palabraPalindromaEnFrase(frase));
     }
-    public static String palabraPalindromaEnFrase(String frase){
-        String[] array= frase.split("\\s+|\n|,");
+
+
+    /**
+     *
+     * @param frase Ingrese una frase en formato {@link String String}
+     * @return devuelve un {@link String String} diciendo si en la
+     * frase hay una palabra palíndroma o no y en caso de ser afirmativo
+     * dice cual es la palabra
+     */
+    public static String palabraPalindromaEnFrase(String frase) {
+        String[] array = frase.split("\\s+|\n|,");
         String palabra;
         int distancia = 1;
-        int z;
-        String palindroma= "";
+        String palindroma = "";
+        char c1, c2;
 
         for (int i = 0; i < array.length; i++) {
-            palabra= array[i];
-            z=palabra.length();
-            for (int j = 0; j < palabra.length(); j++) {
+            distancia = 0;
+            palabra = array[i];
 
-                if (palabra.charAt(z) == palabra.charAt(j)){
-                    distancia=0;
-                    z=-1;
-                }else {
-                    distancia=1;
+            for (int j = 0; j < palabra.length() / 2; j++) {
+                c1 = palabra.charAt(j);
+                c2 = palabra.charAt(palabra.length() - 1 - j);
+                if (c1 == c2) {
+                    distancia = 0;
+                } else {
+                    distancia++;
                 }
-
             }
-
-            if (distancia == 0 ){
-                palindroma = "La frase tiene la ";
+            if (distancia == 0) {
+                palindroma = "La frase tiene la palabra " + palabra + " como palíndroma";
                 break;
-
-            }else {
-                palindroma = "No hay ninguna palabra palíndroma";
             }
         }
-
-
+        if (distancia != 0) {
+            palindroma = "No hay ninguna palabra palíndroma";
+        }
         return palindroma;
     }
 }
