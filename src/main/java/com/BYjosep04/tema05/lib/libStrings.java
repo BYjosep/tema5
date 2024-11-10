@@ -6,7 +6,7 @@ public class libStrings {
 
     /**
      * Ingresar frase
-     *
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
      * @return Devuelve la frase ingresada en formato {@link String String}
      */
     public static String ingresarFrase() {
