@@ -18,10 +18,9 @@ public class Ejercicio9 {
     public static String fraseEnPosicionImpar(String frase){
         int largo = frase.length();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i <largo ; i++) {
+        for (int i = 0; i <largo ; i+=2) {
             sb.append(frase.charAt(i));
 
-            i++;
         }
         return sb.toString();
     }
