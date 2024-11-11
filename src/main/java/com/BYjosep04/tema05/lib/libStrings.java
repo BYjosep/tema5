@@ -3,19 +3,37 @@ package com.BYjosep04.tema05.lib;
 import java.util.Scanner;
 
 public class libStrings {
-
+    public static  Scanner scanner = new Scanner(System.in);
     /**
      * Ingresar frase
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
      * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
      * @return Devuelve la frase ingresada en formato {@link String String}
      */
+    public static void cerrarScaner(){
+        scanner.close();
+    }
     public static String ingresarFrase() {
         String frase;
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese una frase");
         frase = scanner.nextLine();
-        scanner.close();
         return frase;
+
+    }
+
+    /**
+     * Ingresar text.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     * @return Devuelve la frase ingresada en formato {@link String String}
+     */
+    public static String ingresarTexto(String texto) {
+        String palabra;
+
+        System.out.println(texto);
+        palabra = scanner.nextLine();
+
+        return palabra;
 
     }
 
