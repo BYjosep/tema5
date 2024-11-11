@@ -1,10 +1,12 @@
 package com.BYjosep04.tema05;
+
 import com.BYjosep04.tema05.lib.libStrings;
 
 public class Ejercicio9 {
     public static void main(String[] args) {
         String frase = libStrings.ingresarFrase();
         System.out.println(fraseEnPosicionImpar(frase));
+
     }
 
     /**
