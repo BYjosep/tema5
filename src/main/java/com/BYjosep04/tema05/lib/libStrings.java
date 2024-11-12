@@ -7,20 +7,22 @@ import java.util.Scanner;
  */
 public class libStrings {
     public static  Scanner scanner = new Scanner(System.in);
+    /* ******************************
+     *  ********** Entrada ************
+     *  ****************************** */
+
     /**
-     * Ingresar frase
-     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
-     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
-     * @return Devuelve la frase ingresada en formato {@link String String}
+     * cerrar {@link Scanner Scanner}
      */
     public static void cerrarScaner(){
         scanner.close();
     }
 
     /**
-     * Plantilla para pedir una frase en formato {@link String String}
-     *
-     * @return Devuelve {@link String String}
+     * Ingresar frase
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     * @return Devuelve la frase ingresada en formato {@link String String}
      */
     public static String ingresarFrase() {
         String frase;
@@ -62,6 +64,53 @@ public class libStrings {
         return opciom;
 
     }
+
+    /**
+     * Ingresar text.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static char ingresarUnCaracter(String texto) {
+        String palabra;
+
+        do {
+            System.out.println(texto);
+
+            palabra = scanner.nextLine();
+        } while (palabra.length() != 1);
+
+        char caracter = palabra.charAt(0);
+
+        return caracter;
+
+    }
+
+
+    /**
+     * Ingresar text.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static int ingresarUnNumero(String texto) {
+        System.out.println(texto);
+
+        int numero = Integer.parseInt(scanner.nextLine());
+
+        return numero;
+
+    }
+
+
+
+
+
+    /* ******************************
+     *  ********** Salida ************
+     *  ****************************** */
 
     /**
      * Transforma el primer caracter en mayusculas
