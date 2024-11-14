@@ -115,7 +115,7 @@ public class libStrings {
             System.out.println(texto);
             numero = Integer.parseInt(scanner.nextLine());
 
-        } while (numero > min);
+        } while (numero < min);
 
 
         return numero;
@@ -136,7 +136,7 @@ public class libStrings {
 
             System.out.println(texto);
             numero = Integer.parseInt(scanner.nextLine());
-        }while (numero > min && numero < max);
+        }while (numero < min && numero > max);
 
         return numero;
 
