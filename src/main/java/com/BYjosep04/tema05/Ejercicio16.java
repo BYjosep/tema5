@@ -13,7 +13,8 @@ public class Ejercicio16 {
         String letrasNif = "TRWAGMYFPDXBNJZSQVHLCKE";
         int resto;
         resto = dni % 23;
-        nif.append(dni).append(letrasNif.charAt(resto));
+        nif.append(dni);
+        nif.append(letrasNif.charAt(resto-1));
 
         return nif.toString();
     }
