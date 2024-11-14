@@ -95,15 +95,52 @@ public class libStrings {
      *
      * @return Devuelve la frase ingresada en formato {@link Character char}
      */
-    public static int ingresarUnNumero(String texto) {
+    public static int ingresarUnNumero(String texto ) {
         System.out.println(texto);
 
-        int numero = Integer.parseInt(scanner.nextLine());
+        return Integer.parseInt(scanner.nextLine());
+
+    }
+
+    /**
+     * Ingresar un número con un valor minimo.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static int ingresarUnNumero(String texto, int min) {
+        int numero;
+        do {
+            System.out.println(texto);
+            numero = Integer.parseInt(scanner.nextLine());
+
+        } while (numero > min);
+
 
         return numero;
 
     }
 
+    /**
+     * Ingresar número con valor minimo y maximo.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static int ingresarUnNumero(String texto, int min, int max) {
+        int numero;
+
+        do {
+
+            System.out.println(texto);
+            numero = Integer.parseInt(scanner.nextLine());
+        }while (numero > min && numero < max);
+
+        return numero;
+
+    }
 
 
 
@@ -323,7 +360,7 @@ public class libStrings {
     /**
      * @param frase frase en formato {@link  String String}
      * @return Devuelve un {@link  String String} con una tabla por palabras con el respectivo
-     * numero de letras por palabras
+     * número de letras por palabras
      */
     public static String contadorLetrasPorPalabra(String frase) {
         StringBuilder sb = new StringBuilder();
@@ -363,7 +400,7 @@ public class libStrings {
      * @param frase Ingrese una frase en formato {@link String String}
      * @return devuelve un {@link String String} diciendo si en la
      * frase hay una palabra palíndroma o no y en caso de ser afirmativo
-     * dice cual es la palabra
+     * dice cuál es la palabra
      */
     public static String palabraPalindromaEnFrase(String frase) {
         String[] array = frase.split("\\s+|\n|,");
@@ -414,7 +451,7 @@ public class libStrings {
 
     /**
      * @param nombreComppleto Nombre con apellidos en formato {@link String String}
-     * @return Devuelve un String con toda la informacion necesaria
+     * @return Devuelve un String con toda la información necesaria
      */
     public static String nombreCompletoEnMayusculasMinusculasYLongitud(String nombreComppleto){
         String nombreMayusculas, nombreMinusculas;

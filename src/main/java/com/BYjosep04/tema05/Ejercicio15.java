@@ -15,7 +15,7 @@ public class Ejercicio15 {
      *
      * @param caracter El caracter que se desea usar
      * @param columna El numero de columnas que se desea usar
-     * @param fila El numero de filas que desea usar
+     * @param fila El número de filas que desea usar
      * @return Devuelve un {@link String String} con la tabla deseada
      */
     public static String matrizDeUnCaracter(char caracter, int columna, int fila) {
