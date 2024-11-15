@@ -81,9 +81,7 @@ public class libStrings {
             palabra = scanner.nextLine();
         } while (palabra.length() != 1);
 
-        char caracter = palabra.charAt(0);
-
-        return caracter;
+        return palabra.charAt(0);
 
     }
 
