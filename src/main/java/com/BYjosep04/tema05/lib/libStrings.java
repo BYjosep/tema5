@@ -546,7 +546,7 @@ public class libStrings {
     }
 
     /**
-     * @return Devuelve la palabra mas larga
+     * @return Devuelve la palabra más larga
      */
     public static String palabraMasLarga() {
         String palabra1, palabra2, palabra3;
