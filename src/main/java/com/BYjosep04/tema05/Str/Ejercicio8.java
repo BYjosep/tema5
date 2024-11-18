@@ -1,4 +1,4 @@
-package com.BYjosep04.tema05;
+package com.BYjosep04.tema05.Str;
 
 import java.util.Scanner;
 

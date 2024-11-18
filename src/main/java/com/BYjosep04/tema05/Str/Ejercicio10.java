@@ -1,4 +1,4 @@
-package com.BYjosep04.tema05;
+package com.BYjosep04.tema05.Str;
 
 import com.BYjosep04.tema05.lib.libStrings;
 

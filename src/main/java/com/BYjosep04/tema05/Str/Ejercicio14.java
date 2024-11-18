@@ -1,4 +1,4 @@
-package com.BYjosep04.tema05;
+package com.BYjosep04.tema05.Str;
 
 public class Ejercicio14 {
     public static void main(String[] args) {
