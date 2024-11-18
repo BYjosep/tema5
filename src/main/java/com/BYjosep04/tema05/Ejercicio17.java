@@ -2,15 +2,12 @@ package com.BYjosep04.tema05;
 
 import com.BYjosep04.tema05.lib.libStrings;
 
-import java.util.Scanner;
-
 public class Ejercicio17 {
 
     // Cadena con las letras en el orden correspondiente al cálculo
     private static final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKE";
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         String nif;
 
         nif = libStrings.ingresarTexto("Introduce el NIF (formato: 12345678Z): ");
@@ -22,7 +19,7 @@ public class Ejercicio17 {
             System.out.println("El NIF es inválido.");
         }
 
-        scanner.close();
+
     }
 
     /**
