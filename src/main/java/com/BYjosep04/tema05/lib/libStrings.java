@@ -10,10 +10,10 @@ public class libStrings {
     public static  Scanner scanner = new Scanner(System.in);
 
 
+
     /* ******************************
      *  ********** Entrada ************
      *  ****************************** */
-
 
     /**
      * cerrar {@link Scanner Scanner}
@@ -23,10 +23,10 @@ public class libStrings {
     }
 
 
+
     /* ******************************
      *  ********** Arrays ************
      *  ****************************** */
-
     /**
      * @param numeros {@link  Array array} que desea modificar
      */
@@ -38,11 +38,11 @@ public class libStrings {
     }
 
 
+
     /* ********************************************
      * ** Ingresar parametros dentro de un array **
      * ********************************************
      */
-
     /**
      * Ingresar caracteres en un array
      *
@@ -95,10 +95,10 @@ public class libStrings {
     }
 
 
+
     /* ******************************
      *  ********** String ************
      *  ****************************** */
-
     /**
      * Ingresar frase
      * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
@@ -129,29 +129,12 @@ public class libStrings {
 
     }
 
-    /**
-     * Ingresar text.
-     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
-     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
-     *
-     * @return Devuelve la frase ingresada en formato {@link String String}
-     */
-    public static int ingresarOpcin(String texto) {
-        int opciom;
-
-        System.out.println(texto);
-        opciom = Integer.parseInt(scanner.nextLine());
-
-        return opciom;
-
-    }
 
 
 
     /* ******************************
      *  ********** char **************
      *  ****************************** */
-
     /**
      * Ingresar text.
      * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
@@ -175,10 +158,10 @@ public class libStrings {
 
 
 
+
     /* ******************************
      *  ********** int ***************
      *  ****************************** */
-
 
     /**
      * Ingresar text.
@@ -194,6 +177,23 @@ public class libStrings {
 
     }
 
+
+    /**
+     * Ingresar un número.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link String String}
+     */
+    public static int ingresarOpcin(String texto) {
+        int opciom;
+
+        System.out.println(texto);
+        opciom = Integer.parseInt(scanner.nextLine());
+
+        return opciom;
+
+    }
 
     /**
      * Ingresar un número con un valor minimo.
@@ -790,7 +790,7 @@ public class libStrings {
     }
 
     /**
-     * cuenta las ocurrencias de la ultima letra del texto
+     * Cuenta las ocurrencias de la última letra del texto
      *
      * @param texto Ingrese el texto en formato {@link  String String}
      * @return Devuelve un numero de tipo {@link Integer int}
