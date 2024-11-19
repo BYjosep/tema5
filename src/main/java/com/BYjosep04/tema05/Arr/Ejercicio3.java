@@ -10,16 +10,20 @@ public class Ejercicio3 {
     }
 
     public static String tablaDeNumeros(float[] numeros) {
-
+        int inicio = 0;
+        int aux = 4;
         StringBuilder sb = new StringBuilder();
-        int j = 0;
+
 
         do {
-            for (int i = 0; i < 5; i++) {
+            for (int i = inicio; i < aux; i++) {
                 sb.append(numeros[i]).append(" ");
             }
             sb.append("\n");
-        } while (numeros.length != j);
+            inicio = aux;
+            aux += 4;
+
+        } while (numeros.length != inicio);
 
         return sb.toString();
     }
