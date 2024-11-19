@@ -20,7 +20,10 @@ public class Ejercicio1 {
      * @param numeros {@link  Array array} que desea modificar
      */
     public static void introducirNumerosEnArray(float[] numeros) {
-        //float numero;
+        if  (numeros == null ) {
+            return;
+        }
+
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = libStrings.ingresarUnNumeroF("Ingresa un numero");
         }

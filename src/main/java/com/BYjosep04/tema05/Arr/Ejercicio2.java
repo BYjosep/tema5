@@ -25,7 +25,9 @@ public class Ejercicio2 {
      * @param caracteres {@link  Array array} que desea modificar
      */
     public static void introducirCaracterEnArray(char[] caracteres) {
-
+        if  (caracteres == null ) {
+            return;
+        }
         for (int i = 0; i < caracteres.length; i++) {
             caracteres[i] = libStrings.ingresarUnCaracter("Ingresa un caracter");
         }
