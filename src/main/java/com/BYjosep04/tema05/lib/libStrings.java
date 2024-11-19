@@ -346,6 +346,30 @@ public class libStrings {
     }
 
 
+    /**
+     * @param numeros array que desea crear una tabla de 4x(n)columnos
+     *                este {@link Array array} es de tipo {@link Float float}
+     * @return devuelve un {@link String String} con la cadena de caracteres
+     */
+    public static String tablaDeNumeros(float[] numeros) {
+        int inicio = 0;
+        int aux = 4;
+        StringBuilder sb = new StringBuilder();
+
+        do {
+            for (int i = inicio; i < aux; i++) {
+                sb.append(numeros[i]).append(" ");
+            }
+            sb.append("\n");
+            inicio = aux;
+            aux += 4;
+
+        } while (numeros.length != inicio);
+
+        return sb.toString();
+    }
+
+
     /* ******************************
      *  ********** String ************
      *  ****************************** */
