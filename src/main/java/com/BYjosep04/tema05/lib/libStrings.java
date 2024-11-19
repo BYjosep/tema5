@@ -1,5 +1,6 @@
 package com.BYjosep04.tema05.lib;
 
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 /**
@@ -7,9 +8,12 @@ import java.util.Scanner;
  */
 public class libStrings {
     public static  Scanner scanner = new Scanner(System.in);
+
+
     /* ******************************
      *  ********** Entrada ************
      *  ****************************** */
+
 
     /**
      * cerrar {@link Scanner Scanner}
@@ -17,6 +21,83 @@ public class libStrings {
     public static void cerrarScaner(){
         scanner.close();
     }
+
+
+    /* ******************************
+     *  ********** Arrays ************
+     *  ****************************** */
+
+    /**
+     * @param numeros {@link  Array array} que desea modificar
+     */
+    public static void introducirNumerosEnArray(float[] numeros) {
+        //float numero;
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = libStrings.ingresarUnNumeroF("Ingresa un numero");
+        }
+    }
+
+
+    /* ********************************************
+     * ** Ingresar parametros dentro de un array **
+     * ********************************************
+     */
+
+    /**
+     * Ingresar caracteres en un array
+     *
+     * @param caracteres {@link  Array array} que desea modificar
+     */
+    public static void introducirCaracterEnArray(char[] caracteres) {
+
+        for (int i = 0; i < caracteres.length; i++) {
+            caracteres[i] = ingresarUnCaracter("Ingresa un caracter");
+        }
+    }
+
+
+    /**
+     * Ingresar caracteres en un array
+     *
+     * @param numeroEntero {@link  Array array} que desea modificar
+     */
+    public static void introducirIntEnArray(int[] numeroEntero) {
+
+        for (int i = 0; i < numeroEntero.length; i++) {
+            numeroEntero[i] = ingresarUnCaracter("Ingresa un caracter");
+        }
+    }
+
+
+    /**
+     * Ingresar numeroFloat en un array
+     *
+     * @param numeroFloat {@link  Array array} que desea modificar
+     */
+    public static void introducirFloatEnArray(float[] numeroFloat) {
+
+        for (int i = 0; i < numeroFloat.length; i++) {
+            numeroFloat[i] = ingresarUnNumeroF("Ingresa un numero float");
+        }
+    }
+
+
+    /**
+     * Ingresar texto en un array
+     *
+     * @param texto {@link  Array array} que desea modificar
+     */
+    public static void introducirTexto(String[] texto) {
+
+        for (int i = 0; i < texto.length; i++) {
+            texto[i] = ingresarTexto("Ingresa un texto");
+        }
+    }
+
+
+    /* ******************************
+     *  ********** String ************
+     *  ****************************** */
 
     /**
      * Ingresar frase
@@ -65,6 +146,12 @@ public class libStrings {
 
     }
 
+
+
+    /* ******************************
+     *  ********** char **************
+     *  ****************************** */
+
     /**
      * Ingresar text.
      * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
@@ -86,6 +173,13 @@ public class libStrings {
     }
 
 
+
+
+    /* ******************************
+     *  ********** int ***************
+     *  ****************************** */
+
+
     /**
      * Ingresar text.
      * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
@@ -99,6 +193,7 @@ public class libStrings {
         return Integer.parseInt(scanner.nextLine());
 
     }
+
 
     /**
      * Ingresar un número con un valor minimo.
@@ -119,6 +214,7 @@ public class libStrings {
         return numero;
 
     }
+
 
     /**
      * Ingresar número con valor minimo y maximo.
@@ -142,10 +238,118 @@ public class libStrings {
 
 
 
+    /* ******************************
+     *  ********** Float *************
+     *  ****************************** */
+
+
+    /**
+     * Ingresar text.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static float ingresarUnNumeroF(String texto) {
+        System.out.println(texto);
+
+        return Float.parseFloat(scanner.nextLine());
+
+    }
+
+
+    /**
+     * Ingresar un número con un valor minimo.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static float ingresarUnNumeroF(String texto, float min) {
+        float numero;
+        do {
+            System.out.println(texto);
+            numero = Integer.parseInt(scanner.nextLine());
+
+        } while (numero < min);
+
+
+        return numero;
+
+    }
+
+
+    /**
+     * Ingresar número con valor minimo y maximo.
+     * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
+     * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
+     *
+     * @return Devuelve la frase ingresada en formato {@link Character char}
+     */
+    public static float ingresarUnNumeroF(String texto, float min, float max) {
+        float numero;
+
+        do {
+
+            System.out.println(texto);
+            numero = Integer.parseInt(scanner.nextLine());
+        } while (numero < min && numero > max);
+
+        return numero;
+
+    }
+
+
 
     /* ******************************
      *  ********** Salida ************
      *  ****************************** */
+
+
+    /* ******************************
+     *  ********** Array ************
+     *  ****************************** */
+
+
+    /**
+     * Ingrese un {@link  Array array} para calcular la media
+     *
+     * @param numeros Ingresa el {@link  Array array}
+     * @return Devuelve {@link Float float}
+     */
+    public static float mediaDeNumerosEnArray(float[] numeros) {
+        float suma = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            suma = suma + numeros[i];
+        }
+        return suma / numeros.length;
+
+    }
+
+
+    /**
+     * @param caracteres Ingresa el {@link Array array} de tipo {@link Character char}
+     * @return Devuelve un {@link String String} con la cadena de caracteres
+     * con las posiciones impares cuponiendo que la posicion inicial es 0
+     */
+    public static String repetirCaracterImparDeArray(char[] caracteres) {
+        StringBuilder cadena = new StringBuilder();
+        for (int i = 0; i < caracteres.length; i++) {
+            if (i % 2 != 0) {
+                cadena.append(caracteres[i]);
+                cadena.append(caracteres[i]);
+            } else {
+                cadena.append(caracteres[i]);
+            }
+        }
+        return cadena.toString();
+    }
+
+
+    /* ******************************
+     *  ********** String ************
+     *  ****************************** */
+
 
     /**
      * Transforma el primer caracter en mayusculas
@@ -178,7 +382,7 @@ public class libStrings {
         vocales = 0;
         consonantes = 0;
         /*
-         * Para evitar tener que poner mas letras en el swich
+         * Para evitar tener que poner más letras en el swich
          * se han pasado todos los caracteres a minusculas
          */
         frase = frase.toLowerCase();
@@ -201,98 +405,10 @@ public class libStrings {
     }
 
 
-    /**
-     * @param mensaje Variable como {@link StringBuilder StringBuilder}
-     * @return Devuelve un entero como valor
-     */
-    public static int contadorPalabras(StringBuilder mensaje) {
-        String mensajeStr = mensaje.toString();
-        mensajeStr = mensajeStr.trim();
-
-        return mensajeStr.split("\\s|\n").length;
-    }
-
-
-    /**
-     * @param mensaje Variable como {@link String String}
-     * @return Devuelve un entero como valor
-     */
-    public static int contadorPalabras(String mensaje) {
-        mensaje = mensaje.trim();
-
-        return mensaje.split("\\s|\n").length;
-    }
-
-
-    /**
-     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
-     * de cada palabra
-     *
-     * @param mensaje Inserte el mensaje en formato {@link StringBuilder String}
-     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
-     */
-    public static StringBuilder contadorVocalesConsonantesPorPalabras(StringBuilder mensaje) {
-        StringBuilder mensajeEntregado = new StringBuilder();
-        String mensajeStr = mensaje.toString();
-        String[] array = mensajeStr.split("\\s|\n|,");
-
-        for (int i = 0; i < mensajeStr.split("\\s|\n|,").length; i++) {
-            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
-
-        }
-
-        return mensajeEntregado;
-    }
-
-
-    /**
-     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
-     * de cada palabra
-     *
-     * @param mensaje Inserte el mensaje en formato {@link String String}
-     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
-     */
-    public static StringBuilder contadorVocalesConsonantesPorPalabras(String mensaje) {
-        StringBuilder mensajeEntregado = new StringBuilder();
-        String[] array;
-        array = mensaje.split("\\s|\n|,");
-
-
-        for (int i = 0; i < mensaje.split("\\s|\n|,").length; i++) {
-            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
-
-        }
-
-
-        return mensajeEntregado;
-    }
-
-
-    /**
-     * @param mensaje Ingrese el mensaje que desee en formato {@link StringBuilder StringBuilder}
-     * @return devuelve un string con un mensaje que indica la palabra mas grande y cuantas letras tiene
-     */
-    public static String palabraMasGRande(StringBuilder mensaje) {
-        String mensajeEntregado;
-        String mensajeStr = mensaje.toString();
-        String[] array = mensajeStr.split("\\s|\n|,");
-        String palabra = "";
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].length() > palabra.length()) {
-                palabra = array[i];
-            }
-
-        }
-        mensajeEntregado = "La palabra " + palabra + " tiene " + palabra.length() + " letras.";
-
-        return mensajeEntregado;
-    }
-
 
     /**
      * @param mensaje Ingrese el mensaje que desee en formato {@link String String}
-     * @return devuelve un string con un mensaje que indica la palabra mas grande y cuantas letras tiene
+     * @return devuelve un string con un mensaje que indica la palabra más grande y cuantas letras tiene
      */
     public static String palabraMasGRande(String mensaje) {
         String mensajeEntregado;
@@ -312,7 +428,7 @@ public class libStrings {
 
     /**
      * @param frase Ingresa una frase en formato {@link String String}
-     * @param veces Ingresa el numero de veces en formato {@link Integer int}
+     * @param veces Ingresa el número de veces en formato {@link Integer int}
      * @return Devuelve un texto en formato {@link StringBuilder StringBuilder}
      */
     public static StringBuilder repetirFrase(String frase, int veces) {
@@ -324,24 +440,33 @@ public class libStrings {
         return mensaje;
     }
 
-    /**
-     * @param frase Ingresa una frase en formato {@link String String}
-     * @param veces Ingresa el numero de veces en formato {@link Integer int}
-     * @return Devuelve un texto en formato {@link StringBuilder StringBuilder}
-     */
-    public static StringBuilder repetirFrase(StringBuilder frase, int veces) {
-        StringBuilder mensaje = new StringBuilder();
 
-        for (int i = 0; i < veces; i++) {
-            mensaje.append(frase).append("\n");
+    /**
+     * @param mensaje Ingrese el mensaje que desee en formato {@link StringBuilder StringBuilder}
+     * @return devuelve un string con un mensaje que indica la palabra más grande y cuantas letras tiene
+     */
+    public static String palabraMasGRande(StringBuilder mensaje) {
+        String mensajeEntregado;
+        String mensajeStr = mensaje.toString();
+        String[] array = mensajeStr.split("\\s|\n|,");
+        String palabra = "";
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length() > palabra.length()) {
+                palabra = array[i];
+            }
+
         }
-        return mensaje;
+        mensajeEntregado = "La palabra " + palabra + " tiene " + palabra.length() + " letras.";
+
+        return mensajeEntregado;
     }
+
 
 
     /**
      * @param frase Ingrese el texto en formato {@link String String}
-     * @return Devuelve la frase pero cada palabra esta separada por un salto de linea
+     * @return Devuelve la frase, pero cada palabra está separada por un salto de línea
      */
     public static String separadorPalabrasPorLineas(String frase) {
         StringBuilder sb = new StringBuilder();
@@ -430,22 +555,6 @@ public class libStrings {
     }
 
 
-    /**
-     * @param nombre Nombre ingresado
-     * @param primerApellido Primer apellido ingresado
-     * @param segundoApellido Segundo apellido ingresado
-     */
-    public static void concentrador (String nombre, String primerApellido, String segundoApellido){
-        String nombreStr= nombre + " " + primerApellido + " " + segundoApellido;
-
-        System.out.println(nombreCompletoEnMayusculasMinusculasYLongitud(nombreStr));
-        primerosCincoCaracteres(nombreStr);
-
-        System.out.println("Hay "+ocurrenciasDeUltimoCaracter(nombreStr)+" ocurrencias en el nombre completo");
-        System.out.println(ocurrenciaPrimeraLetraEnMayuscula(nombreStr));
-        System.out.println(cadenaConSimbolosDelanteDetras(nombreStr));
-        System.out.println(cadenaInvertida(nombreStr));
-    }
 
     /**
      * @param nombreComppleto Nombre con apellidos en formato {@link String String}
@@ -464,42 +573,7 @@ public class libStrings {
 
 
     /**
-     * @param nombreComppleto El nombre completo en formato {@link String String}
-     */
-    public static void primerosCincoCaracteres(String nombreComppleto){
-        StringBuilder letras = new StringBuilder();
-        if (nombreComppleto.length()> 5){
-            for (int i = 0; i < 5; i++) {
-                letras.append(nombreComppleto.charAt(i));
-            }
-            System.out.println(letras);
-        }else {
-            System.err.println("Error, el nombre no cumple el tamaño minimo de 5 caracteres");
-        }
-    }
-
-
-    /**
-     * cuenta las ocurrencias de la ultima letra del texto
-     * @param texto Ingrese el texto en formato {@link  String String}
-     * @return Devuelve un numero de tipo {@link Integer int}
-     */
-    public static int ocurrenciasDeUltimoCaracter(String texto){
-        char ultimaLetra;
-        ultimaLetra= texto.charAt(texto.length()-1);
-        int ocurrencias=0;
-        for (int i = 0; i < texto.length(); i++) {
-            if (ultimaLetra == texto.charAt(i)){
-                ocurrencias++;
-            }
-        }
-        return ocurrencias;
-
-    }
-
-
-    /**
-     * Ingresa el texto y devuelve la frase pero la primera letra y
+     * Ingresa el texto y devuelve la frase, pero la primera letra y
      * las que coincidan en maysculas
      * @param texto Ingrese el texto en formaro {@link String String}
      * @return Devuelve todas las letras que coincidan con la primera
@@ -537,7 +611,7 @@ public class libStrings {
 
     /**
      * @param texto Ingrese el texto En formato {@link String String}
-     * @return
+     * @return sustituye 'es' por 'no por' y '\\d+' por '*'
      */
     public static String sustituirPartesDeFrase(String texto) {
         texto = texto.replaceAll("es", "no por");
@@ -550,9 +624,9 @@ public class libStrings {
      */
     public static String palabraMasLarga() {
         String palabra1, palabra2, palabra3;
-        String mensaje = "La palabra mas larga es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primer palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segundo palabra: ");
+        String mensaje = "La palabra más larga es: ";
+        palabra1 = libStrings.ingresarTexto("Ingrese la primera palabra: ");
+        palabra2 = libStrings.ingresarTexto("Ingrese la segunda palabra: ");
         palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
@@ -571,13 +645,13 @@ public class libStrings {
 
 
     /**
-     * @return Devuelve la palabra mas corta
+     * @return Devuelve la palabra más corta
      */
     public static String palabraMasCorta() {
         String palabra1, palabra2, palabra3;
-        String mensaje = "La palabra mas corta es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primer palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segundo palabra: ");
+        String mensaje = "La palabra más corta es: ";
+        palabra1 = libStrings.ingresarTexto("Ingrese la primera palabra: ");
+        palabra2 = libStrings.ingresarTexto("Ingrese la segunda palabra: ");
         palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
@@ -596,10 +670,11 @@ public class libStrings {
 
 
     /**
-     * @return devuelve el numero de vocales en formato {@link  String String}
+     * @return devuelve el número de vocales en formato {@link  String String}
      */
     public static String numerosDeVocales() {
-        int vocales = 0;
+        int vocales;
+        vocales = 0;
         String frase = libStrings.ingresarFrase();
         frase = frase.toLowerCase();
         for (int i = 0; i < frase.length(); i++) {
@@ -610,4 +685,153 @@ public class libStrings {
         }
         return "Hay " + vocales + " vocales";
     }
+
+
+
+    /* ******************************
+     *  ******* StringBuilder *********
+     *  ****************************** */
+
+    /**
+     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
+     * de cada palabra
+     *
+     * @param mensaje Inserte el mensaje en formato {@link StringBuilder String}
+     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
+     */
+    public static StringBuilder contadorVocalesConsonantesPorPalabras(StringBuilder mensaje) {
+        StringBuilder mensajeEntregado = new StringBuilder();
+        String mensajeStr = mensaje.toString();
+        String[] array = mensajeStr.split("\\s|\n|,");
+
+        for (int i = 0; i < mensajeStr.split("\\s|\n|,").length; i++) {
+            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+        }
+        return mensajeEntregado;
+    }
+
+    /**
+     * Ingrese un mensaje y devuelve la cantidad de vocales y consonantes
+     * de cada palabra
+     *
+     * @param mensaje Inserte el mensaje en formato {@link String String}
+     * @return devuelve el valor en formato {@link StringBuilder StringBuilder}
+     */
+    public static StringBuilder contadorVocalesConsonantesPorPalabras(String mensaje) {
+        StringBuilder mensajeEntregado = new StringBuilder();
+        String[] array;
+        array = mensaje.split("\\s|\n|,");
+
+
+        for (int i = 0; i < mensaje.split("\\s|\n|,").length; i++) {
+            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+
+        }
+
+
+        return mensajeEntregado;
+    }
+
+
+    /**
+     * @param frase Ingresa una frase en formato {@link String String}
+     * @param veces Ingresa el número de veces en formato {@link Integer int}
+     * @return Devuelve un texto en formato {@link StringBuilder StringBuilder}
+     */
+    public static StringBuilder repetirFrase(StringBuilder frase, int veces) {
+        StringBuilder mensaje = new StringBuilder();
+
+        for (int i = 0; i < veces; i++) {
+            mensaje.append(frase).append("\n");
+        }
+        return mensaje;
+    }
+
+
+
+    /* ******************************
+     *  ********** int ***************
+     *  ****************************** */
+
+
+    /**
+     * @param mensaje Variable como {@link StringBuilder StringBuilder}
+     * @return Devuelve un entero como valor
+     */
+    public static int contadorPalabras(StringBuilder mensaje) {
+        String mensajeStr = mensaje.toString();
+        mensajeStr = mensajeStr.trim();
+
+        return mensajeStr.split("\\s|\n").length;
+    }
+
+    /**
+     * cuenta las ocurrencias de la ultima letra del texto
+     *
+     * @param texto Ingrese el texto en formato {@link  String String}
+     * @return Devuelve un numero de tipo {@link Integer int}
+     */
+    public static int ocurrenciasDeUltimoCaracter(String texto) {
+        char ultimaLetra;
+        ultimaLetra = texto.charAt(texto.length() - 1);
+        int ocurrencias = 0;
+        for (int i = 0; i < texto.length(); i++) {
+            if (ultimaLetra == texto.charAt(i)) {
+                ocurrencias++;
+            }
+        }
+        return ocurrencias;
+
+    }
+
+
+    /**
+     * @param mensaje Variable como {@link String String}
+     * @return Devuelve un entero como valor
+     */
+    public static int contadorPalabras(String mensaje) {
+        mensaje = mensaje.trim();
+
+        return mensaje.split("\\s|\n").length;
+    }
+
+
+    /* ******************************
+     *  ********** void **************
+     *  ****************************** */
+
+
+    /**
+     * @param nombre          Nombre ingresado
+     * @param primerApellido  Primer apellido ingresado
+     * @param segundoApellido Segundo apellido ingresado
+     */
+    public static void concentrador(String nombre, String primerApellido, String segundoApellido) {
+        String nombreStr = nombre + " " + primerApellido + " " + segundoApellido;
+
+        System.out.println(nombreCompletoEnMayusculasMinusculasYLongitud(nombreStr));
+        primerosCincoCaracteres(nombreStr);
+
+        System.out.println("Hay " + ocurrenciasDeUltimoCaracter(nombreStr) + " ocurrencias en el nombre completo");
+        System.out.println(ocurrenciaPrimeraLetraEnMayuscula(nombreStr));
+        System.out.println(cadenaConSimbolosDelanteDetras(nombreStr));
+        System.out.println(cadenaInvertida(nombreStr));
+    }
+
+
+    /**
+     * @param nombreComppleto El nombre completo en formato {@link String String}
+     */
+    public static void primerosCincoCaracteres(String nombreComppleto) {
+        StringBuilder letras = new StringBuilder();
+        if (nombreComppleto.length() > 5) {
+            for (int i = 0; i < 5; i++) {
+                letras.append(nombreComppleto.charAt(i));
+            }
+            System.out.println(letras);
+        } else {
+            System.err.println("Error, el nombre no cumple el tamaño minimo de 5 caracteres");
+        }
+    }
+
 }
