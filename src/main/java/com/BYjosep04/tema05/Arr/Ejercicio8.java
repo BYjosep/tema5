@@ -4,18 +4,25 @@ import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio8 {
     public static void main(String[] args) {
-      float[] numeros = new float[100];
-      float numeroABuscar;
-      numeroABuscar= LibStrings.ingresarUnNumeroF("Ingrese el numero a buscar");
+      int[] numeros = new int[100];
+      int numeroABuscar;
+      numeroABuscar= LibStrings.ingresarUnNumero("Ingrese el numero a buscar");
         System.out.println(buscarNumeroEnArray(numeros, numeroABuscar));
     }
 
-    public static String buscarNumeroEnArray(float[] array, float numeroABuscar) {
+    /**
+     *
+     * @param array array que desea pasar
+     * @param numeroABuscar número que desea buscar
+     * @return Devuelve un {@link String String} con el mensaje de si ha
+     * encontrado el numero en el array y en caso afirmativo en las posiciones en las que se encuentra
+     */
+    public static String buscarNumeroEnArray(int[] array, int numeroABuscar) {
         StringBuilder resultado = new StringBuilder();
         resultado.append("El restado aparece en la posicion: ");
         int fraseInicial =resultado.length();
         for (int i = 0; i < array.length; i++) {
-            if (i == numeroABuscar) {
+            if (array[i] == numeroABuscar) {
                 resultado.append(array[i]).append(" ");
             }
         }
