@@ -1,6 +1,7 @@
 package com.BYjosep04.tema05.lib;
 
 import java.lang.reflect.Array;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -423,6 +424,20 @@ public class LibStrings {
         return sb.toString();
     }
 
+
+    /**
+     * @param array genera número aleatorio dentro de un {@link java.util.Arrays array} de
+     *              n numeros de formato {@link Integer int}
+     */
+    public static void generadorAleatorio(int[] array, int min, int max) {
+        Random random = new Random();
+        max += 1;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(min, max);
+            //array[i] = random.nextDouble(1, 10.0);
+        }
+
+    }
 
     /* ******************************
      *  ********** String ************
