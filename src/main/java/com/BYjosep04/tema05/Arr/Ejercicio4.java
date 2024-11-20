@@ -6,16 +6,18 @@ import java.util.Random;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
-        double media;
+        double mediaTotal;
         double[] array = new double[30];
 
         generadorAleatorio(array, 1, 10);
 
 
-        media = LibStrings.mediaDeNumerosEnArray(array);
+        double media5 = LibStrings.mediaDeNumerosEnArray(array, 5);
+        mediaTotal = LibStrings.mediaDeNumerosEnArray(array);
 
         System.out.println(formatarArray(array));
-        System.out.println("La media es: " + media);
+        System.out.println("La media de numeros iguales o superiores a 5 es: " + media5);
+        System.out.println("La media total es: " + mediaTotal);
     }
 
     /**

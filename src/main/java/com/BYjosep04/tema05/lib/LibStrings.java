@@ -342,6 +342,44 @@ public class LibStrings {
 
     }
 
+    /**
+     * Ingrese un {@link  Array array} para calcular la media
+     *
+     * @param numeros Ingresa el {@link  Array array}
+     * @return Devuelve {@link Double double}
+     */
+    public static double mediaDeNumerosEnArray(double[] numeros, int min) {
+        double suma = 0;
+        double contador = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] < min) {
+                suma = suma + numeros[i];
+                contador++;
+            }
+        }
+        return suma / contador;
+
+    }
+
+    /**
+     * Ingrese un {@link  Array array} para calcular la media
+     *
+     * @param numeros Ingresa el {@link  Array array}
+     * @return Devuelve {@link Double double}
+     */
+    public static double mediaDeNumerosEnArray(double[] numeros, int min, int max) {
+        double suma = 0;
+        double contador = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] < min && numeros[i] > max) {
+                suma = suma + numeros[i];
+                contador++;
+            }
+        }
+        return suma / contador;
+
+    }
+
 
     /**
      * @param caracteres Ingresa el {@link Array array} de tipo {@link Character char}
