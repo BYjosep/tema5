@@ -6,15 +6,17 @@ import java.util.Arrays;
 
 public class Ejercicio6 {
     public static void main(String[] args) {
+        final int MAXIMO = 10;
+        final int MINIMO = 1;
         int[] a = new int[10];
         int[] b = new int[10];
-        int[] suma = new int[10];
-        float[] division = new float[10];
+        int[] suma;
+        float[] division ;
         String sumaString, divisionString;
-        LibStrings.generadorAleatorio(a, 1, 10);
-        LibStrings.generadorAleatorio(b, 1, 10);
-        sumaDeArrays(a, b, suma);
-        divisionDeArrays(a, b, division);
+        LibStrings.generadorAleatorio(a, MINIMO,MAXIMO );
+        LibStrings.generadorAleatorio(b, MINIMO,MAXIMO);
+        suma=sumaDeArrays(a, b);
+        division = divisionDeArrays(a, b);
         sumaString = Arrays.toString(suma);
         divisionString = Arrays.toString(division);
         System.out.println("Array a\n" + Arrays.toString(a));
@@ -24,20 +26,29 @@ public class Ejercicio6 {
     }
 
     /**
-     * @param array1         primer array
-     * @param array2         segundo array
-     * @param arrayResultado array donde se hace la suma final
+     * @param array1 primer array
+     * @param array2 segundo array
      */
-    public static void sumaDeArrays(int[] array1, int[] array2, int[] arrayResultado) {
-        for (int i = 0; i < arrayResultado.length; i++) {
-            arrayResultado[i] = array1[i] + array2[i];
+    public static int[] sumaDeArrays(int[] array1, int[] array2) {
+        if (array1.length != array2.length) {
+            return null;
         }
+        int[] suma = new int[array1.length];
+        for (int i = 0; i < suma.length; i++) {
+            suma[i] = array1[i] + array2[i];
+        }
+        return suma;
     }
 
 
-    public static void divisionDeArrays(int[] array1, int[] array2, float[] arrayResultado) {
-        for (int i = 0; i < arrayResultado.length; i++) {
-            arrayResultado[i] = (float) array1[i] / (float) array2[i];
+    public static float[] divisionDeArrays(int[] array1, int[] array2) {
+        if (array1.length != array2.length) {
+            return null;
         }
+        float[] division = new float[array1.length];
+        for (int i = 0; i < division.length; i++) {
+            division[i] = (float) array1[i] / (float) array2[i];
+        }
+        return division;
     }
 }
