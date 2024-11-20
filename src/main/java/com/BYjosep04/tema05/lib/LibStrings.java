@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * @author BYjosep04
  */
-public class libStrings {
+public class LibStrings {
     public static  Scanner scanner = new Scanner(System.in);
 
 
@@ -33,7 +33,7 @@ public class libStrings {
     public static void introducirNumerosEnArray(float[] numeros) {
         //float numero;
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = libStrings.ingresarUnNumeroF("Ingresa un numero");
+            numeros[i] = LibStrings.ingresarUnNumeroF("Ingresa un numero");
         }
     }
 
@@ -319,6 +319,22 @@ public class libStrings {
      */
     public static float mediaDeNumerosEnArray(float[] numeros) {
         float suma = 0;
+        for (int i = 0; i < numeros.length; i++) {
+            suma = suma + numeros[i];
+        }
+        return suma / numeros.length;
+
+    }
+
+
+    /**
+     * Ingrese un {@link  Array array} para calcular la media
+     *
+     * @param numeros Ingresa el {@link  Array array}
+     * @return Devuelve {@link Double double}
+     */
+    public static double mediaDeNumerosEnArray(double[] numeros) {
+        double suma = 0;
         for (int i = 0; i < numeros.length; i++) {
             suma = suma + numeros[i];
         }
@@ -649,9 +665,9 @@ public class libStrings {
     public static String palabraMasLarga() {
         String palabra1, palabra2, palabra3;
         String mensaje = "La palabra más larga es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primera palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segunda palabra: ");
-        palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
+        palabra1 = LibStrings.ingresarTexto("Ingrese la primera palabra: ");
+        palabra2 = LibStrings.ingresarTexto("Ingrese la segunda palabra: ");
+        palabra3 = LibStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
         int p2 = palabra2.length();
@@ -674,9 +690,9 @@ public class libStrings {
     public static String palabraMasCorta() {
         String palabra1, palabra2, palabra3;
         String mensaje = "La palabra más corta es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primera palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segunda palabra: ");
-        palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
+        palabra1 = LibStrings.ingresarTexto("Ingrese la primera palabra: ");
+        palabra2 = LibStrings.ingresarTexto("Ingrese la segunda palabra: ");
+        palabra3 = LibStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
         int p2 = palabra2.length();
@@ -699,7 +715,7 @@ public class libStrings {
     public static String numerosDeVocales() {
         int vocales;
         vocales = 0;
-        String frase = libStrings.ingresarFrase();
+        String frase = LibStrings.ingresarFrase();
         frase = frase.toLowerCase();
         for (int i = 0; i < frase.length(); i++) {
             switch (frase.charAt(i)) {
@@ -729,7 +745,7 @@ public class libStrings {
         String[] array = mensajeStr.split("\\s|\n|,");
 
         for (int i = 0; i < mensajeStr.split("\\s|\n|,").length; i++) {
-            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(LibStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
         }
         return mensajeEntregado;
     }
@@ -748,7 +764,7 @@ public class libStrings {
 
 
         for (int i = 0; i < mensaje.split("\\s|\n|,").length; i++) {
-            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+            mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ").append(LibStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
 
         }
 

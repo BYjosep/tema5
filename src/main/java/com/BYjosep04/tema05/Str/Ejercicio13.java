@@ -1,6 +1,6 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio13 {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Ejercicio13 {
         String salida = "";
         int opcion;
         do {
-            opcion = libStrings.ingresarOpcin("MENU PRINCIPAL \n" +
+            opcion = LibStrings.ingresarOpcin("MENU PRINCIPAL \n" +
                     "==============\n" +
                     "1. Palabra más larga.\n" +
                     "2. Palabra más corta.\n" +
@@ -42,9 +42,9 @@ public class Ejercicio13 {
     public static String palabraMasLarga() {
         String palabra1, palabra2, palabra3;
         String mensaje = "La palabra mas larga es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primer palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segundo palabra: ");
-        palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
+        palabra1 = LibStrings.ingresarTexto("Ingrese la primer palabra: ");
+        palabra2 = LibStrings.ingresarTexto("Ingrese la segundo palabra: ");
+        palabra3 = LibStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
         int p2 = palabra2.length();
@@ -67,9 +67,9 @@ public class Ejercicio13 {
     public static String palabraMasCorta() {
         String palabra1, palabra2, palabra3;
         String mensaje = "La palabra mas corta es: ";
-        palabra1 = libStrings.ingresarTexto("Ingrese la primer palabra: ");
-        palabra2 = libStrings.ingresarTexto("Ingrese la segundo palabra: ");
-        palabra3 = libStrings.ingresarTexto("Ingrese la tercera palabra: ");
+        palabra1 = LibStrings.ingresarTexto("Ingrese la primer palabra: ");
+        palabra2 = LibStrings.ingresarTexto("Ingrese la segundo palabra: ");
+        palabra3 = LibStrings.ingresarTexto("Ingrese la tercera palabra: ");
 
         int p1 = palabra1.length();
         int p2 = palabra2.length();
@@ -91,7 +91,7 @@ public class Ejercicio13 {
      */
     public static String numerosDeVocales() {
         int vocales = 0;
-        String frase = libStrings.ingresarFrase();
+        String frase = LibStrings.ingresarFrase();
         frase = frase.toLowerCase();
         for (int i = 0; i < frase.length(); i++) {
             switch (frase.charAt(i)) {

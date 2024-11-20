@@ -1,6 +1,6 @@
 package com.BYjosep04.tema05.Arr;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -29,7 +29,7 @@ public class Ejercicio2 {
             return;
         }
         for (int i = 0; i < caracteres.length; i++) {
-            caracteres[i] = libStrings.ingresarUnCaracter("Ingresa un caracter");
+            caracteres[i] = LibStrings.ingresarUnCaracter("Ingresa un caracter");
         }
     }
 

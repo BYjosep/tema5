@@ -1,10 +1,10 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio10 {
     public static void main(String[] args) {
-        String frase = libStrings.ingresarFrase();
+        String frase = LibStrings.ingresarFrase();
         System.out.println(palabraPalindromaEnFrase(frase));
     }
 

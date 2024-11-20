@@ -1,6 +1,6 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio17 {
 
@@ -10,7 +10,7 @@ public class Ejercicio17 {
     public static void main(String[] args) {
         String nif;
 
-        nif = libStrings.ingresarTexto("Introduce el NIF (formato: 12345678Z): ");
+        nif = LibStrings.ingresarTexto("Introduce el NIF (formato: 12345678Z): ");
         nif = nif.toUpperCase();
 
         if (validateNIF(nif)) {

@@ -1,13 +1,13 @@
 package com.BYjosep04.tema05.Arr;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 import java.lang.reflect.Array;
 
 public class Ejercicio3 {
     public static void main(String[] args) {
         float[] numeros = new float[20];
-        libStrings.introducirFloatEnArray(numeros);
+        LibStrings.introducirFloatEnArray(numeros);
         System.out.println(tablaDeNumeros(numeros));
     }
 

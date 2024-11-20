@@ -1,6 +1,6 @@
 package com.BYjosep04.tema05.Arr;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -25,7 +25,7 @@ public class Ejercicio1 {
         }
 
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = libStrings.ingresarUnNumeroF("Ingresa un numero");
+            numeros[i] = LibStrings.ingresarUnNumeroF("Ingresa un numero");
         }
     }
 

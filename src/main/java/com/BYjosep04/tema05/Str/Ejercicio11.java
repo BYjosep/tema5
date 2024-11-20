@@ -1,14 +1,14 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio11 {
     public static void main(String[] args) {
         String nombre, primerApellido, segundoApellido;
-        nombre = libStrings.ingresarTexto("Ingrese El nombre");
-        primerApellido = libStrings.ingresarTexto("Ingrese el primer apellido");
-        segundoApellido = libStrings.ingresarTexto("Ingrese el segundo apellido");
-        libStrings.cerrarScaner();
+        nombre = LibStrings.ingresarTexto("Ingrese El nombre");
+        primerApellido = LibStrings.ingresarTexto("Ingrese el primer apellido");
+        segundoApellido = LibStrings.ingresarTexto("Ingrese el segundo apellido");
+        LibStrings.cerrarScaner();
         concentrador(nombre, primerApellido, segundoApellido);
 
     }
@@ -103,9 +103,7 @@ public class Ejercicio11 {
      * @return devuelve *** texto ***
      */
     public static String cadenaConSimbolosDelanteDetras(String texto){
-        StringBuilder sb = new StringBuilder();
-        sb.append("***").append(" ").append(texto).append(" ").append("***");
-        return sb.toString();
+        return "***" + " " + texto + " " + "***";
     }
 
 

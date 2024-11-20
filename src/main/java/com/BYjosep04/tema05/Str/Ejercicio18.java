@@ -1,7 +1,7 @@
 package com.BYjosep04.tema05.Str;
 
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio18 {
 
@@ -9,7 +9,7 @@ public class Ejercicio18 {
 
         String fechaNacimiento;
 
-        fechaNacimiento = libStrings.ingresarTexto("Introduce tu fecha de nacimiento (formato dd-mm-aaaa)");
+        fechaNacimiento = LibStrings.ingresarTexto("Introduce tu fecha de nacimiento (formato dd-mm-aaaa)");
 
         if (esFormatoValido(fechaNacimiento)) {
             int luckyNumber = calcularLuckyNumber(fechaNacimiento);

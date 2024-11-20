@@ -1,12 +1,12 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio15 {
     public static void main(String[] args) {
-        char caracter = libStrings.ingresarUnCaracter("Ingrese un caracter");
-        int columna = libStrings.ingresarUnNumero("Ingrese la columna");
-        int fila = libStrings.ingresarUnNumero("Ingrese la fila");
+        char caracter = LibStrings.ingresarUnCaracter("Ingrese un caracter");
+        int columna = LibStrings.ingresarUnNumero("Ingrese la columna");
+        int fila = LibStrings.ingresarUnNumero("Ingrese la fila");
         System.out.println(matrizDeUnCaracter(caracter, columna, fila));
     }
 

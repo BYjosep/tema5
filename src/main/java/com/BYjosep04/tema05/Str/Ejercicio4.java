@@ -1,6 +1,6 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 import java.util.Scanner;
 
@@ -30,7 +30,7 @@ public class Ejercicio4 {
 
         for (int i = 0; i < mensaje.split("\\s|\n").length; i++) {
             mensajeEntregado.append("La palabra ").append(i + 1).append(" tiene ")
-                    .append(libStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
+                    .append(LibStrings.cantidadVocalesYConsonantes(array[i])).append(".\n");
 
         }
 

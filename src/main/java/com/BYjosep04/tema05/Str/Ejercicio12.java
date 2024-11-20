@@ -1,10 +1,10 @@
 package com.BYjosep04.tema05.Str;
 
-import com.BYjosep04.tema05.lib.libStrings;
+import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio12 {
     public static void main(String[] args) {
-        String texto = libStrings.ingresarFrase();
+        String texto = LibStrings.ingresarFrase();
 
         System.out.println(sustituirPartesDeFrase(texto));
     }
