@@ -32,7 +32,8 @@ public class Ejercicio5 {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < estatura.length; i++) {
             if (estatura[i] > media) {
-                sb.append("La persona " + i + " tiene la estatura: " + estatura[i] + "\n");
+                sb.append("La persona ").append(i).append(" tiene la estatura: ")
+                        .append(estatura[i]).append("\n");
             }
         }
         return sb.toString();
