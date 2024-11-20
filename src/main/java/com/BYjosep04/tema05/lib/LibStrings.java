@@ -353,7 +353,7 @@ public class LibStrings {
         double suma = 0;
         double contador = 0;
         for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i] < min) {
+            if (numeros[i] > min) {
                 suma = suma + numeros[i];
                 contador++;
             }
