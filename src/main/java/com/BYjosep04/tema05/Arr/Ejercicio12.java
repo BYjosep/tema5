@@ -9,7 +9,7 @@ public class Ejercicio12 {
     public static void main(String[] args) {
         int[] v = new int[50];
         int[] p;
-        LibStrings.generadorAleatorio(v, 0, 7897);
+        LibStrings.generadorAleatorio(v, 0, 10);
 
         p = sumaDeNumeros(v);
         System.out.println("Array v");
