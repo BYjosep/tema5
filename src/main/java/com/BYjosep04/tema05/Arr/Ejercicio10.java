@@ -13,16 +13,23 @@ public class Ejercicio10 {
         Ejercicio9.visualizarArray(s);
     }
 
-    public static int[] mayorA10(int[] p) {
-        int[] array = new int[p.length];
-        for (int i = 0; i < p.length; i++) {
-            if (p[i] <= 10) {
-                array[i] = -1;
+
+    /**
+     *
+     * @param arrau array que desea copiar
+     * @return devuelve él un array modificado mostrando los
+     * valores iguales o menores a 10 como -1
+     */
+    public static int[] mayorA10(int[] arrau) {
+        int[] arrayAux = new int[arrau.length];
+        for (int i = 0; i < arrau.length; i++) {
+            if (arrau[i] <= 10) {
+                arrayAux[i] = -1;
             } else {
-                array[i] = p[i];
+                arrayAux[i] = arrau[i];
             }
 
         }
-        return array;
+        return arrayAux;
     }
 }

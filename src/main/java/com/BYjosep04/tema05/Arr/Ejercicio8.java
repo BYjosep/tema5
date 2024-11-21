@@ -22,9 +22,9 @@ public class Ejercicio8 {
         StringBuilder resultado = new StringBuilder();
         resultado.append("El restado aparece en la posicion: ");
         int fraseInicial =resultado.length();
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == numeroABuscar) {
-                resultado.append(array[i]).append(" ");
+        for (int j : array) {
+            if (j == numeroABuscar) {
+                resultado.append(j).append(" ");
             }
         }
 

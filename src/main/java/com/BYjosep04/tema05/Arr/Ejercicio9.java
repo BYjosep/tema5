@@ -33,14 +33,32 @@ public class Ejercicio9 {
 
     }
 
+
+    /**
+     *
+     * @param array genera o cambial los valores de un array con
+     * una capacidad ya definida
+     */
     public static void crearArray (int[] array) {
         LibStrings.generadorAleatorio(array, 0,50);
     }
 
+
+    /**
+     *
+     * @param array visualiza todo el array
+     */
     public static void visualizarArray (int[] array) {
         String arrayStr = Arrays.toString(array);
         System.out.println(arrayStr);
     }
+
+
+    /**
+     *
+     * @param array visualiza las posiciones pares asumiendo de que la primera
+     * posicion es 0
+     */
     public static void visualizarPares(int[] array) {
         StringBuilder sb= new StringBuilder();
         sb.append("[");
@@ -54,6 +72,10 @@ public class Ejercicio9 {
     }
 
 
+    /**
+     *
+     * @param array visualiza los multiplos de 3
+     */
     public static void visualizarMultiplos3(int[] array) {
         StringBuilder sb = new StringBuilder();
 
@@ -69,7 +91,7 @@ public class Ejercicio9 {
     /**
      * @param texto texto en formato {@link StringBuilder StringBuilder}
      *              para eliminar la última coma
-     * @return
+     * @return Devuelve el texto formateado para array
      */
     public static String formatearArray(StringBuilder texto) {
         texto.delete(texto.length() - 1, texto.length());
