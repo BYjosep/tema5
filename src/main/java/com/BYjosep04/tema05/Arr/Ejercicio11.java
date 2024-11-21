@@ -19,8 +19,7 @@ public class Ejercicio11 {
         if (array == null) {
             return null;
         }
-        int cantidad = array.length;
-        cantidad--;
+        int cantidad = array.length - 1;
         int[] retorno = new int[array.length];
         for (int i : array) {
             retorno[cantidad] = i;
