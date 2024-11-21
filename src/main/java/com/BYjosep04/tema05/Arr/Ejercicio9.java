@@ -62,9 +62,9 @@ public class Ejercicio9 {
     public static void visualizarPares(int[] array) {
         StringBuilder sb= new StringBuilder();
         sb.append("[");
-        for (int i = 0; i < array.length; i++) {
-            if(i %2==0)
-                sb.append(array[i]).append(",");
+        for (int j : array) {
+            if (j % 2 == 0)
+                sb.append(j).append(",");
         }
         String arrayStr = formatearArray(sb);
 
