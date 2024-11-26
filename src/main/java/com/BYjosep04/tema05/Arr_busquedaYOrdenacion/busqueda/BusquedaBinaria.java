@@ -20,31 +20,30 @@ public class BusquedaBinaria {
      * @return Devuelve si el número se encuentra y en caso afirmativo también su posicio
      */
     public static String busquedaBinaria(int[] array, int buscar) {
-        int medio = array.length / 2;
+        int medio;
         int primeraPosicion = 0;
         int ultimoPosicion = array.length - 1;
         String mensaje = "";
         boolean acabado = false;
         do {
+            medio = (primeraPosicion + ultimoPosicion) / 2;
             if (array[medio] == buscar) {
-                mensaje = "El número ha sido acabado en la posicion" + medio;
+                mensaje = "El número ha sido encontrado en la posicion " + medio;
                 acabado = true;
             } else if (array[primeraPosicion] == buscar) {
-                mensaje = "El número ha sido acabado en la posicion" + primeraPosicion;
+                mensaje = "El número ha sido encontrado en la posicion " + primeraPosicion;
                 acabado = true;
             } else if (array[ultimoPosicion] == buscar) {
-                mensaje = "El número ha sido acabado en la posicion" + ultimoPosicion;
+                mensaje = "El número ha sido encontrado en la posicion " + ultimoPosicion;
                 acabado = true;
 
             } else if (primeraPosicion >= ultimoPosicion) {
-                mensaje = "No se ha acabado el numero";
+                mensaje = "No se ha encontrado el numero";
                 acabado = true;
             } else if (array[medio] > buscar) {
                 ultimoPosicion = medio - 1;
-                medio = medio / 2;
             } else if (array[medio] < buscar) {
                 primeraPosicion = medio + 1;
-                medio = (primeraPosicion + ultimoPosicion) / 2;
             }
 
         } while (!acabado);
