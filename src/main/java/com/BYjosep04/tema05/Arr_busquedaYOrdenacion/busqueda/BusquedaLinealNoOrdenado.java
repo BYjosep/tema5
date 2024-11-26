@@ -9,7 +9,7 @@ public class BusquedaLinealNoOrdenado {
         LibStrings.generadorAleatorio(array, -1000, 1000);
 
         buscar = LibStrings.ingresarUnNumero("Ingrese un numero ha buscar");
-        System.out.println(busquedaLinealNoOrdenada(array, buscar));
+        System.out.println(busquedaLineal(array, buscar));
     }
 
     /**
@@ -19,7 +19,7 @@ public class BusquedaLinealNoOrdenado {
      * en caso de ser afirmativo indica la primera posicion (Ya que en caso de que sea encontrado rompera el
      * bucle y enviará el mensaje con que ha sido encontrado y su posicion)
      */
-    public static String busquedaLinealNoOrdenada(int[] array, int buscar) {
+    public static String busquedaLineal(int[] array, int buscar) {
         int posicion = -1;
         String mensaje;
         for (int i = 0; i < array.length; i++) {
