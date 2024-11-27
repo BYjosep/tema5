@@ -46,7 +46,7 @@ public class Ejercicio9 {
 
     /**
      *
-     * @param array visualiza todo el array
+     * @param array visualiza el array
      */
     public static void visualizarArray (int[] array) {
         String arrayStr = Arrays.toString(array);
