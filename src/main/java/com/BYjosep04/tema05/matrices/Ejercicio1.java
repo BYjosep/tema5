@@ -14,6 +14,11 @@ public class Ejercicio1 {
         System.out.println(matrizToString(matriz));
     }
 
+    /**
+     * Este metodo sirve para rellenar la matriz de forma manual
+     *
+     * @param matriz matriz a rellenar
+     */
     public static void rellenarMatrizManualmente(float[][] matriz) {
         final int OPERACION = 10_000;
         int filas = matriz.length;
@@ -29,6 +34,11 @@ public class Ejercicio1 {
 
     }
 
+    /**
+     *
+     * @param matriz matriz lla rellenada
+     * @return devuelve un {@link String String} con la patriz para ser imprimible
+     */
     public static String matrizToString(float[][] matriz) {
         StringBuilder builder = new StringBuilder();
         final int LONGITUD = maximaLongitud(matriz);
@@ -41,6 +51,12 @@ public class Ejercicio1 {
         return builder.toString();
     }
 
+
+    /**
+     *
+     * @param matriz matriz lla rellenado
+     * @return devuelve la longitud mas larga para poder dar un buen formato
+     */
     private static int maximaLongitud(float[][] matriz) {
 
         int longitud = 0;
