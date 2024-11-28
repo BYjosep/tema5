@@ -20,14 +20,12 @@ public class Ejercicio1 {
      * @param matriz matriz a rellenar
      */
     public static void rellenarMatrizManualmente(float[][] matriz) {
-        final int OPERACION = 10_000;
         int filas = matriz.length;
         int columnas = matriz[0].length;
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
                 float valor = LibStrings.ingresarUnNumeroF("Ingrese un numero para la fila " + i + " y la columna " + j);
-                int aux = (int) (valor * OPERACION);
-                valor = (float) aux / OPERACION;
+
                 matriz[i][j] = valor;
             }
         }
