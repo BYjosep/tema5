@@ -4,11 +4,11 @@ import com.BYjosep04.tema05.lib.LibStrings;
 
 public class Ejercicio1 {
     public static void main(String[] args) {
-        float[][] matriz;
+        double[][] matriz;
 
         int filas = LibStrings.ingresarUnNumero("Ingrese el número de filas que desea", 1);
         int columnas = LibStrings.ingresarUnNumero("Ingrese el numero de columnas que desea", 1);
-        matriz = new float[filas][columnas];
+        matriz = new double[filas][columnas];
 
         rellenarMatrizManualmente(matriz);
         System.out.println(matrizToString(matriz));
@@ -19,12 +19,12 @@ public class Ejercicio1 {
      *
      * @param matriz matriz a rellenar
      */
-    public static void rellenarMatrizManualmente(float[][] matriz) {
+    public static void rellenarMatrizManualmente(double[][] matriz) {
         int filas = matriz.length;
         int columnas = matriz[0].length;
         for (int i = 0; i < filas; i++) {
             for (int j = 0; j < columnas; j++) {
-                float valor = LibStrings.ingresarUnNumeroF("Ingrese un numero para la fila " + i + " y la columna " + j);
+                double valor = LibStrings.ingresarUnNumeroF("Ingrese un numero para la fila " + i + " y la columna " + j);
 
                 matriz[i][j] = valor;
             }
@@ -37,12 +37,13 @@ public class Ejercicio1 {
      * @param matriz matriz lla rellenada
      * @return devuelve un {@link String String} con la patriz para ser imprimible
      */
-    public static String matrizToString(float[][] matriz) {
+    public static String matrizToString(double[][] matriz) {
+        final int DECIMALES = 4;
         StringBuilder builder = new StringBuilder();
-        final int LONGITUD = maximaLongitud(matriz);
-        for (float[] floats : matriz) {
-            for (float valor : floats) {
-                builder.append(String.format("%-" + LONGITUD + ".4f    ", valor));
+        final int LONGITUD = maximaLongitudEnMatriz(matriz, DECIMALES);
+        for (double[] floats : matriz) {
+            for (double valor : floats) {
+                builder.append(String.format("%-" + LONGITUD + "." + DECIMALES + "f    ", valor));
             }
             builder.append("\n");
         }
@@ -55,16 +56,27 @@ public class Ejercicio1 {
      * @param matriz matriz lla rellenado
      * @return devuelve la longitud mas larga para poder dar un buen formato
      */
-    private static int maximaLongitud(float[][] matriz) {
+    private static int maximaLongitudEnMatriz(double[][] matriz, int decimales) {
 
         int longitud = 0;
-        for (float[] floats : matriz) {
-            for (float valor : floats) {
-                if (longitud < String.valueOf(valor).length()) {
-                    longitud = String.valueOf(valor).length();
-                }
+        for (double[] fila : matriz) {
+            if (longitud < determinarLongitudMaxima(fila, decimales)) {
+                longitud = determinarLongitudMaxima(fila, decimales);
             }
         }
         return longitud;
+    }
+
+
+    public static int determinarLongitudMaxima(double[] array, int decimales) {
+        int longitudMaxima = 0;
+        String formato = "%." + decimales + "f";
+        for (double numero : array) {
+            int longitudActual = String.format(formato, numero).length();
+            if (longitudMaxima < longitudActual) {
+                longitudMaxima = longitudActual;
+            }
+        }
+        return longitudMaxima;
     }
 }
