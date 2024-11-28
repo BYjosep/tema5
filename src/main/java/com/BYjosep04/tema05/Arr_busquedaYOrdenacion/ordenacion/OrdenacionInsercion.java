@@ -30,7 +30,7 @@ public class OrdenacionInsercion {
                 if (array[j] > aux) {
                     array[j + 1] = array[j];
                     array[j] = aux;
-                } else if (array[j] < aux) {
+                } else {
                     break;
                 }
             }
