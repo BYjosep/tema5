@@ -21,7 +21,7 @@ public class Ejercicio9 {
                 Selecciona una opción:""",0,4);
 
             switch (opcion) {
-                case 1 -> crearArray(array);
+                case 1 -> insertarValorEnArray(array);
                 case 2 -> visualizarArray(array);
                 case 3 -> visualizarPares(array);
                 case 4 -> visualizarMultiplos3(array);
@@ -39,13 +39,12 @@ public class Ejercicio9 {
      * @param array genera o cambial los valores de un array con
      * una capacidad ya definida
      */
-    public static void crearArray (int[] array) {
+    public static void insertarValorEnArray(int[] array) {
         LibStrings.generadorAleatorio(array, 0,50);
     }
 
 
     /**
-     *
      * @param array visualiza el array
      */
     public static void visualizarArray (int[] array) {
@@ -67,7 +66,6 @@ public class Ejercicio9 {
                 sb.append(j).append(",");
         }
         String arrayStr = formatearArray(sb);
-
         System.out.println(arrayStr);
     }
 
@@ -83,7 +81,6 @@ public class Ejercicio9 {
             if (array[i] % 3 == 0)
                 sb.append("En la posicion ").append(i).append(" esta el numero; ").append(array[i]).append("\n");
         }
-
         System.out.println(sb);
     }
 

@@ -15,7 +15,6 @@ public class Ejercicio10 {
 
 
     /**
-     *
      * @param arrau array que desea copiar
      * @return devuelve él un array modificado mostrando los
      * valores iguales o menores a 10 como -1
@@ -28,7 +27,6 @@ public class Ejercicio10 {
             } else {
                 arrayAux[i] = arrau[i];
             }
-
         }
         return arrayAux;
     }

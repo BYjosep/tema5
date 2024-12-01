@@ -14,7 +14,6 @@ public class BusquedaBinaria {
     /**
      * Para este supuesto sé ha utilizado el mismo metodo de rellenar array que el de la
      * busqueda lineal ordenada, ya que si está desordenado este algoritmo de busqueda no funciona
-     *
      * @param array  array a del que desea buscar un número
      * @param buscar numer que se está buscando
      * @return Devuelve si el número se encuentra y en caso afirmativo también su posicio

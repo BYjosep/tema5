@@ -15,6 +15,10 @@ public class Ejercicio11 {
         System.out.println(Arrays.toString(p));
     }
 
+    /**
+     * @param array array de tipo {@link Integer int}
+     * @return devuelve el array invertido
+     */
     public static int[] invertirOrdenDeArray(int[] array) {
         if (array == null) {
             return null;

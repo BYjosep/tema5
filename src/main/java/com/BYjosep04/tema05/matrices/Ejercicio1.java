@@ -54,7 +54,7 @@ public class Ejercicio1 {
     /**
      *
      * @param matriz matriz lla rellenado
-     * @return devuelve la longitud mas larga para poder dar un buen formato
+     * @return devuelve la longitud más larga para poder dar un buen formato
      */
     private static int maximaLongitudEnMatriz(double[][] matriz, int decimales) {
 
