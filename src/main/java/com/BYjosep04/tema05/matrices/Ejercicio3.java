@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Ejercicio3 {
     public enum Ficha {
-        O, X
+        O, X, NONE
     }
 
     public enum Jugador {
@@ -15,16 +15,27 @@ public class Ejercicio3 {
         PLAYER2
     }
 
-    private static Ficha[][] tablero;
+    private static final Ficha[][] tablero = new Ficha[3][3];
     private static Jugador turnoActual;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean seguirJugando;
-
+        boolean partidaFinalizada;
+        boolean hayGanador;
         do {
             reset();
-            play();
+            do {
+                play();
+                hayGanador = esJugadaGanadora(getFichaJugada(turnoActual));
+                if (!hayGanador) {
+                    turnoActual = siguienteTurno();
+
+                }
+                partidaFinalizada = hayGanador;//||/* tablero completo*/;
+
+            } while (!partidaFinalizada);
+
 
             System.out.println("¿Desea volver a jugar? S/N");
             char opcion = Character.toLowerCase(scanner.nextLine().charAt(0));
@@ -54,14 +65,21 @@ public class Ejercicio3 {
             }
         } while (!jugadaValida);
         tablero[fila][columna] = getFichaJugada(turnoActual);
+        System.out.println(tabletoToString());
 
+    }
+
+    private static Jugador siguienteTurno() {
+        Jugador[] jugadors = Jugador.values();
+
+        return jugadors[(turnoActual.ordinal() + 1) % jugadors.length];
     }
 
     private static void reset() {
         Random random = new Random();
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                tablero[i][j] = null;
+                tablero[i][j] = Ficha.NONE;
             }
         }
         Jugador[] valoresJugadores = Jugador.values();
@@ -71,17 +89,16 @@ public class Ejercicio3 {
 
     private static boolean esJugadaValida(int fila, int columna) {
 
-        return tablero[fila][columna] == null;
+        return tablero[fila][columna] == Ficha.NONE;
     }
 
     private static String tabletoToString() {
         StringBuilder sb = new StringBuilder();
 
-
         for (int i = 0; i < tablero.length; i++) {
             sb.append("|---|---|---|\n");
             for (int j = 0; j < tablero[i].length; j++) {
-                sb.append("| ").append(tablero[i][j]).append(" ");
+                sb.append("| ").append(tablero[i][j] == Ficha.NONE ? " " : tablero[i][j]).append(" ");
             }
             sb.append("|\n");
         }
@@ -91,6 +108,42 @@ public class Ejercicio3 {
 
     private static Ficha getFichaJugada(Jugador jugador) {
         return Ficha.values()[jugador.ordinal()];
+    }
+
+    private static boolean esJugadaGanadora(Ficha ficha) {
+        int contadorHorizontal;
+        int contadorVertical;
+        int contadorDiagonal1 = 0;
+        int contadorDiagonal2 = 0;
+        for (int i = 0; i < tablero.length; i++) {
+            contadorHorizontal = 0;
+            contadorVertical = 0;
+
+            for (int j = 0; j < tablero[i].length; j++) {
+
+                if (tablero[i][j].equals(ficha)) {
+                    contadorHorizontal++;
+                }
+                if (tablero[j][i].equals(ficha)) {
+                    contadorVertical++;
+                }
+                //comprobar diagonales
+                if (i == j && tablero[i][j].equals(ficha)) {
+                    contadorDiagonal1++;
+                }
+                if (j == tablero.length - 1 - i && tablero[i][j].equals(ficha)) {
+                    contadorDiagonal2++;
+                }
+            }
+            if (contadorHorizontal == tablero[i].length || contadorVertical == tablero.length) {
+                return true;
+            }
+            if (contadorDiagonal1 == tablero.length || contadorDiagonal2 == tablero.length) {
+                return true;
+            }
+        }
+        return false;
+
     }
 
 }
