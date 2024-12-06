@@ -8,7 +8,7 @@ public class BusquedaLinealNoOrdenado {
         int buscar;
         LibStrings.generadorAleatorio(array, -1000, 1000);
 
-        buscar = LibStrings.ingresarUnNumero("Ingrese un numero ha buscar");
+        buscar = LibStrings.ingresarUnaOpcion("Ingrese un numero ha buscar");
         System.out.println(busquedaLineal(array, buscar));
     }
 

@@ -7,7 +7,7 @@ public class Ejercicio8 {
       int[] numeros = new int[100];
       int numeroABuscar;
       LibStrings.generadorAleatorio(numeros, Integer.MIN_VALUE, Integer.MAX_VALUE);
-      numeroABuscar= LibStrings.ingresarUnNumero("Ingrese el numero a buscar");
+        numeroABuscar = LibStrings.ingresarUnaOpcion("Ingrese el numero a buscar");
         System.out.println(buscarNumeroEnArray(numeros, numeroABuscar));
     }
 

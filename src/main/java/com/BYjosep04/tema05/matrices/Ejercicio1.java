@@ -6,8 +6,8 @@ public class Ejercicio1 {
     public static void main(String[] args) {
         double[][] matriz;
 
-        int filas = LibStrings.ingresarUnNumero("Ingrese el número de filas que desea", 1);
-        int columnas = LibStrings.ingresarUnNumero("Ingrese el numero de columnas que desea", 1);
+        int filas = LibStrings.ingresarUnaOpcion("Ingrese el número de filas que desea", 1);
+        int columnas = LibStrings.ingresarUnaOpcion("Ingrese el numero de columnas que desea", 1);
         matriz = new double[filas][columnas];
 
         rellenarMatrizManualmente(matriz);

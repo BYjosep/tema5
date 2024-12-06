@@ -32,7 +32,6 @@ public class LibStrings {
      * @param numeros {@link  Array array} que desea modificar
      */
     public static void introducirNumerosEnArray(float[] numeros) {
-        //float numero;
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = LibStrings.ingresarUnNumeroF("Ingresa un numero");
         }
@@ -50,7 +49,6 @@ public class LibStrings {
      * @param caracteres {@link  Array array} que desea modificar
      */
     public static void introducirCaracterEnArray(char[] caracteres) {
-
         for (int i = 0; i < caracteres.length; i++) {
             caracteres[i] = ingresarUnCaracter("Ingresa un caracter");
         }
@@ -63,7 +61,6 @@ public class LibStrings {
      * @param numeroEntero {@link  Array array} que desea modificar
      */
     public static void introducirIntEnArray(int[] numeroEntero) {
-
         for (int i = 0; i < numeroEntero.length; i++) {
             numeroEntero[i] = ingresarUnCaracter("Ingresa un caracter");
         }
@@ -76,7 +73,6 @@ public class LibStrings {
      * @param numeroFloat {@link  Array array} que desea modificar
      */
     public static void introducirFloatEnArray(float[] numeroFloat) {
-
         for (int i = 0; i < numeroFloat.length; i++) {
             numeroFloat[i] = ingresarUnNumeroF("Ingresa un numero float");
         }
@@ -89,7 +85,6 @@ public class LibStrings {
      * @param texto {@link  Array array} que desea modificar
      */
     public static void introducirTexto(String[] texto) {
-
         for (int i = 0; i < texto.length; i++) {
             texto[i] = ingresarTexto("Ingresa un texto");
         }
@@ -145,15 +140,11 @@ public class LibStrings {
      */
     public static char ingresarUnCaracter(String texto) {
         String palabra;
-
         do {
             System.out.println(texto);
-
             palabra = scanner.nextLine();
         } while (palabra.length() != 1);
-
         return palabra.charAt(0);
-
     }
 
 
@@ -171,11 +162,9 @@ public class LibStrings {
      *
      * @return Devuelve la frase ingresada en formato {@link Character char}
      */
-    public static int ingresarUnNumero(String texto ) {
+    public static int ingresarUnaOpcion(String texto) {
         System.out.println(texto);
-
         return Integer.parseInt(scanner.nextLine());
-
     }
 
 
@@ -187,13 +176,10 @@ public class LibStrings {
      * @return Devuelve la frase ingresada en formato {@link String String}
      */
     public static int ingresarOpcin(String texto) {
-        int opciom;
-
+        int opcion;
         System.out.println(texto);
-        opciom = Integer.parseInt(scanner.nextLine());
-
-        return opciom;
-
+        opcion = Integer.parseInt(scanner.nextLine());
+        return opcion;
     }
 
     /**
@@ -203,17 +189,13 @@ public class LibStrings {
      *
      * @return Devuelve la frase ingresada en formato {@link Character char}
      */
-    public static int ingresarUnNumero(String texto, int min) {
+    public static int ingresarUnaOpcion(String texto, int min) {
         int numero;
         do {
             System.out.println(texto);
             numero = Integer.parseInt(scanner.nextLine());
-
         } while (numero < min);
-
-
         return numero;
-
     }
 
 
@@ -222,19 +204,15 @@ public class LibStrings {
      * Recuerde cerrar {@link Scanner Scanner} con el metodo cerrarScaner
      * (Echo para no tener que estar escribiendo este codigo en cada ejercicio)
      *
-     * @return Devuelve la frase ingresada en formato {@link Character char}
+     * @return Devuelve el numero en formato {@link Integer int}
      */
-    public static int ingresarUnNumero(String texto, int min, int max) {
+    public static int ingresarUnaOpcion(String texto, int min, int max) {
         int numero;
-
         do {
-
             System.out.println(texto);
             numero = Integer.parseInt(scanner.nextLine());
-        }while (numero < min && numero > max);
-
+        } while (numero < min || numero > max);
         return numero;
-
     }
 
 
@@ -253,9 +231,7 @@ public class LibStrings {
      */
     public static float ingresarUnNumeroF(String texto) {
         System.out.println(texto);
-
         return Float.parseFloat(scanner.nextLine());
-
     }
 
 
@@ -270,13 +246,9 @@ public class LibStrings {
         float numero;
         do {
             System.out.println(texto);
-            numero = Integer.parseInt(scanner.nextLine());
-
+            numero = Float.parseFloat(scanner.nextLine());
         } while (numero < min);
-
-
         return numero;
-
     }
 
 
@@ -289,15 +261,11 @@ public class LibStrings {
      */
     public static float ingresarUnNumeroF(String texto, float min, float max) {
         float numero;
-
         do {
-
             System.out.println(texto);
-            numero = Integer.parseInt(scanner.nextLine());
+            numero = Float.parseFloat(scanner.nextLine());
         } while (numero < min && numero > max);
-
         return numero;
-
     }
 
 
@@ -324,7 +292,6 @@ public class LibStrings {
             suma = suma + numeros[i];
         }
         return suma / numeros.length;
-
     }
 
 

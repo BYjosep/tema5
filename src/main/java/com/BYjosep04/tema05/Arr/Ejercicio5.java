@@ -7,7 +7,7 @@ public class Ejercicio5 {
         int capacidad;
         float[] estatura;
         float media;
-        capacidad = LibStrings.ingresarUnNumero("Ingrese la capacidad de personas que desea introducir", 1);
+        capacidad = LibStrings.ingresarUnaOpcion("Ingrese la capacidad de personas que desea introducir", 1);
         estatura = new float[capacidad];
         pedirEstatura(estatura);
         media = LibStrings.mediaDeNumerosEnArray(estatura);

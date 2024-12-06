@@ -32,10 +32,9 @@ public class Ejercicio3 {
                     turnoActual = siguienteTurno();
 
                 }
-                partidaFinalizada = hayGanador;//||/* tablero completo*/;
+                partidaFinalizada = hayGanador || esEmpate();
 
             } while (!partidaFinalizada);
-
 
             System.out.println("¿Desea volver a jugar? S/N");
             char opcion = Character.toLowerCase(scanner.nextLine().charAt(0));
@@ -54,9 +53,9 @@ public class Ejercicio3 {
          */
         do {
             System.out.println("Turno " + turnoActual + "(" + getFichaJugada(turnoActual) + ")");
-            fila = LibStrings.ingresarUnNumero("Indique en que fila desea poner la ficha", 1, 3);
+            fila = LibStrings.ingresarUnaOpcion("Indique en que fila desea poner la ficha", 1, 3);
             fila--;
-            columna = LibStrings.ingresarUnNumero("Indique la columna desea poner la ficha", 1, 3);
+            columna = LibStrings.ingresarUnaOpcion("Indique la columna desea poner la ficha", 1, 3);
             columna--;
 
             jugadaValida = esJugadaValida(fila, columna);
@@ -120,7 +119,6 @@ public class Ejercicio3 {
             contadorVertical = 0;
 
             for (int j = 0; j < tablero[i].length; j++) {
-
                 if (tablero[i][j].equals(ficha)) {
                     contadorHorizontal++;
                 }
@@ -143,7 +141,23 @@ public class Ejercicio3 {
             }
         }
         return false;
-
     }
 
+    public static boolean esEmpate() {
+        int casillasVacias = 0;
+        for (Ficha[] fila : tablero) {
+            for (Ficha columna : fila) {
+                if (columna == Ficha.NONE) {
+                    casillasVacias++;
+                }
+            }
+        }
+        if (casillasVacias > 0) {
+            return false;
+        } else {
+            System.out.println("Ha habido un empate");
+            return true;
+        }
+
+    }
 }

@@ -5,7 +5,7 @@ import com.BYjosep04.tema05.lib.LibStrings;
 public class Ejercicio16 {
     public static void main(String[] args) {
         int dni;
-        dni = LibStrings.ingresarUnNumero("Ingrese el DNI", 0, 999999999);
+        dni = LibStrings.ingresarUnaOpcion("Ingrese el DNI", 0, 999999999);
         System.out.println(dni);
     }
     public static String dniToNif(int dni) {

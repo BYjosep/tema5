@@ -13,7 +13,7 @@ public class BusquedaLinealOrdenada {
         int[] array = new int[100];
         int buscar;
         rellenarArray(array);
-        buscar = LibStrings.ingresarUnNumero("Ingrese un numero minimo –10 ", -10);
+        buscar = LibStrings.ingresarUnaOpcion("Ingrese un numero minimo –10 ", -10);
         System.out.println(BusquedaLinealNoOrdenado.busquedaLineal(array, buscar));
     }
 

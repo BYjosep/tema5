@@ -5,8 +5,8 @@ import com.BYjosep04.tema05.lib.LibStrings;
 public class Ejercicio15 {
     public static void main(String[] args) {
         char caracter = LibStrings.ingresarUnCaracter("Ingrese un caracter");
-        int columna = LibStrings.ingresarUnNumero("Ingrese la columna");
-        int fila = LibStrings.ingresarUnNumero("Ingrese la fila");
+        int columna = LibStrings.ingresarUnaOpcion("Ingrese la columna");
+        int fila = LibStrings.ingresarUnaOpcion("Ingrese la fila");
         System.out.println(matrizDeUnCaracter(caracter, columna, fila));
     }
 

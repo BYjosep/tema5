@@ -7,7 +7,7 @@ public class BusquedaBinaria {
         int[] array = new int[100];
         int buscar;
         BusquedaLinealOrdenada.rellenarArray(array);
-        buscar = LibStrings.ingresarUnNumero("Ingrese un numero minimo –10", -10);
+        buscar = LibStrings.ingresarUnaOpcion("Ingrese un numero minimo –10", -10);
         System.out.println(busquedaBinaria(array, buscar));
     }
 

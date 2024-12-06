@@ -10,7 +10,7 @@ public class Ejercicio9 {
         int opcion;
         LibStrings.generadorAleatorio(array, 0,50);
         do {
-            opcion = LibStrings.ingresarUnNumero("""
+            opcion = LibStrings.ingresarUnaOpcion("""
                 MENÚ PRINCIPAL
                 ==============
                 1.-Rellenar array.
