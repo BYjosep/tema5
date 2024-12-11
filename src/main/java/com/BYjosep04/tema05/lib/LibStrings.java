@@ -894,4 +894,18 @@ public class LibStrings {
         }
     }
 
+
+    public static double aleatorioDouble(double min, double max) {
+        Random random = new Random();
+        return random.nextDouble() * (max - min);
+    }
+
+    public static int aleatorioInt(int min, int max) {
+        Random random = new Random();
+        return random.nextInt(min, max + 1);
+    }
+
+
+
+
 }
