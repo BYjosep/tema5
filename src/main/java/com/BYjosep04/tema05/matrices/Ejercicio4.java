@@ -1,47 +1,37 @@
 package com.BYjosep04.tema05.matrices;
 
 import com.BYjosep04.tema05.lib.LibStrings;
+import com.BYjosep04.tema05.matrices.ejercicio4Metodos.DevuelveUnaMatriz;
+import com.BYjosep04.tema05.matrices.ejercicio4Metodos.VerValoresEspecificos;
 
 public class Ejercicio4 {
     public static void main(String[] args) {
         final int FILAS = 4, COLUMNAS = 8;
         int[][] matriz, matrizTranspuesta;
 
-        matriz = rellenarMatrizDeAleatiriosInt(FILAS, COLUMNAS);
+        matriz = DevuelveUnaMatriz.rellenarMatrizDeAleatiriosInt(FILAS, COLUMNAS);
         System.out.println(matrizToString(matriz));
 
-        matrizTranspuesta = crearMatrizTranspuesta(matriz);
+        matrizTranspuesta = DevuelveUnaMatriz.crearMatrizTranspuesta(matriz);
         System.out.println(matrizToString(matrizTranspuesta));
 
         System.out.println(matrizConSuma(matriz));
         System.out.println(
-                "El numero maximo de la matriz es:" + maximoDeUnaMatriz(matriz)
-                        + "\nEl numero minimo de la  matriz es: " + miniomoDeUnaMatriz(matriz)
+                "El numero maximo de la matriz es:" + VerValoresEspecificos.maximoDeUnaMatriz(matriz)
+                        + "\nEl numero minimo de la  matriz es: " + VerValoresEspecificos.miniomoDeUnaMatriz(matriz)
         );
-        System.out.println("La media es: " + mediaDeUnaMatriz(matriz));
-        System.out.println(verFilaYColumna(matriz));
+        System.out.println("La media es: " + VerValoresEspecificos.mediaDeUnaMatriz(matriz));
+        System.out.println(VerValoresEspecificos.verUnaPosicion(matriz));
+
+        System.out.println(verUnaFila(matriz));
+        System.out.println(verUnaColumna(matriz));
+        System.out.println("\n------------------------\n");
+        sumaEnLaUltimaComnaDeLaMatriz(matriz);
+        System.out.println(matrizToString(matriz));
+
+
     }
 
-    public static int[][] rellenarMatrizDeAleatiriosInt(int filas, int columnas) {
-        int[][] matriz = new int[filas][columnas];
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-
-                matriz[i][j] = LibStrings.aleatorioInt(-200, 200);
-            }
-        }
-        return matriz;
-    }
-
-    public static int[][] crearMatrizTranspuesta(int[][] matriz) {
-        int[][] matrizTranspuesta = new int[matriz[0].length][matriz.length];
-        for (int i = 0; i < matrizTranspuesta.length; i++) {
-            for (int j = 0; j < matrizTranspuesta[i].length; j++) {
-                matrizTranspuesta[i][j] = matriz[j][i];
-            }
-        }
-        return matrizTranspuesta;
-    }
 
     public static String matrizToString(int[][] matriz) {
         StringBuilder sb = new StringBuilder();
@@ -63,59 +53,51 @@ public class Ejercicio4 {
             for (int j = 0; j < matriz[i].length; j++) {
                 sb.append(matriz[i][j]).append(" ");
                 suma += matriz[i][j];
-
             }
             sb.append("     Tiene como Suma: ").append(suma).append("\n");
         }
         return sb.toString();
     }
 
-    public static int maximoDeUnaMatriz(int[][] matriz) {
-        int maximo = Integer.MIN_VALUE;
-        for (int[] array : matriz) {
-            for (int numero : array) {
-                if (numero > maximo) {
-                    maximo = numero;
-                }
-            }
 
+    public static String verUnaColumna(int[][] matriz) {
+        int num;
+        StringBuilder fila = new StringBuilder();
+        num = LibStrings.ingresarUnaOpcion("Ingrese que fila desea ver 0-" + (matriz.length - 1)
+                , 0, (matriz.length - 1));
+        for (int i = 0; i < matriz.length; i++) {
+            fila.append(matriz[i][num]).append(", ");
         }
-        return maximo;
+        fila.delete(fila.length() - 2, fila.length());
+
+        return fila.toString();
     }
 
-    public static int miniomoDeUnaMatriz(int[][] matriz) {
-        int minimo = Integer.MAX_VALUE;
-        for (int[] array : matriz) {
-            for (int numero : array) {
-                if (numero < minimo) {
-                    minimo = numero;
-                }
-            }
+
+    public static String verUnaFila(int[][] matriz) {
+        int num;
+        StringBuilder columna = new StringBuilder();
+        num = LibStrings.ingresarUnaOpcion("Ingrese que columna desea ver 0-" + (matriz[0].length - 1)
+                , 0, (matriz[0].length - 1));
+
+        for (int i = 0; i < matriz[num].length; i++) {
+            columna.append(matriz[num][i]).append(", ");
         }
-        return minimo;
+        columna.delete(columna.length() - 2, columna.length());
+
+        return columna.toString();
     }
 
-    public static int mediaDeUnaMatriz(int[][] matriz) {
-        int media;
-        int suma = 0;
-        int cantidad = 0;
-        for (int[] array : matriz) {
-            for (int numero : array) {
-                suma += numero;
-                cantidad++;
+    public static void sumaEnLaUltimaComnaDeLaMatriz(int[][] matriz) {
+
+        for (int i = 0; i < matriz.length; i++) {
+            int suma = 0;
+            for (int j = 0; j < (matriz[i].length - 1); j++) {
+                suma += matriz[i][j];
             }
+            matriz[i][(matriz[i].length - 1)] = suma;
         }
-        media = suma / cantidad;
 
-        return media;
-    }
 
-    public static int verFilaYColumna(int[][] matriz) {
-        int numero, fila, columna;
-        fila = LibStrings.ingresarUnaOpcion("Ingresa una fila(0-" + (matriz.length - 1) + ")", 0, (matriz.length - 1));
-        columna = LibStrings.ingresarUnaOpcion("Ingresa una columna(0-" + (matriz[0].length - 1) + ")", 0, (matriz[0].length - 1));
-
-        numero = matriz[fila][columna];
-        return numero;
     }
 }
