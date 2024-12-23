@@ -19,5 +19,21 @@ public class Config {
     public static final String SPRITE_EXCAVADA = "*";
 
 
+    public static final char UP = 'W';
+    public static final char DOWN = 'S';
+    public static final char LEFT = 'A';
+    public static final char RIGTH = 'D';
+    public static final char PICAXE = 'V';
+
+
+    public static String[] pistaCardinal = {
+            "Algunos dicen que hay un tesoro hacia el %s",
+            "Si vas hacia el %s te esperasn muchas riquezas"
+    };
+
+    public static String[] pistaDistancia = {
+            "hay un tesoro cerca de aquí, dicen que no está a más de %d celsas de distancia",
+            "Los rumores dicen que hay un tesoro a %d celdas de distancia"
+    };
 
 }

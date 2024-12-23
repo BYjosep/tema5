@@ -92,6 +92,7 @@ public class Ejercicio5 implements NativeKeyListener {
 
     }
 
+
     public static void generarCeldaAleatoria(Celda celda) {
         // Si no hay posiciones libres, salimos
         if (cantidadPosicionesLibres == 0) {
@@ -124,12 +125,14 @@ public class Ejercicio5 implements NativeKeyListener {
         return sb.toString();
     }
 
+
     @Override
     public void nativeKeyTyped(NativeKeyEvent e) {
         ANSI.clearScreen();
         System.out.println(mapaToString(mapa));
         System.out.println("Key Typed: " + e.getKeyChar());
     }
+
 
     public static class Posicion {
         private final int fila;
